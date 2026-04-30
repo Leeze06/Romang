@@ -1,20 +1,15 @@
-// Edit weekly values here without touching the UI code.
-// - before: [name, day1, day2, day3, day4, day5, day6, day7]
-// - after: values shown after the auto-calculated total column
-// - status: green | yellow | red | gray | null
-// - mode: "count" sums numbers, "wl" calculates attempts and win rate from W/L
-// - summary.total: null = auto-calculate, "" = keep blank
+// Generated from the current Excel workbook. Edit the workbook and rerun xlsx_to_weekly_data.py to refresh.
 window.WEEKLY_DATA = {
   "1월 3주차": {
     "columns": [
       "닉네임",
-      "1/12",
-      "1/13",
-      "1/14",
-      "1/15",
-      "1/16",
-      "1/17",
-      "1/18",
+      "1월 12일",
+      "1월 13일",
+      "1월 14일",
+      "1월 15일",
+      "1월 16일",
+      "1월 17일",
+      "1월 18일",
       "합산",
       "비고"
     ],
@@ -333,13 +328,13 @@ window.WEEKLY_DATA = {
   "2월 2주차": {
     "columns": [
       "닉네임",
-      "2/9",
-      "2/10",
-      "2/11",
-      "2/12",
-      "2/13",
-      "2/14",
-      "2/15",
+      "2월 9일",
+      "2월 10일",
+      "2월 11일",
+      "2월 12일",
+      "2월 13일",
+      "2월 14일",
+      "2월 15일",
       "합산",
       "비고"
     ],
@@ -642,13 +637,13 @@ window.WEEKLY_DATA = {
   "2월 3주차": {
     "columns": [
       "닉네임",
-      "2/16",
-      "2/17",
-      "2/18",
-      "2/19",
-      "2/20",
-      "2/21",
-      "2/22",
+      "2월 16일",
+      "2월 17일",
+      "2월 18일",
+      "2월 19일",
+      "2월 20일",
+      "2월 21일",
+      "2월 22일",
       "합산",
       "비고",
       "",
@@ -1063,13 +1058,13 @@ window.WEEKLY_DATA = {
   "2월 4주차": {
     "columns": [
       "닉네임",
-      "2/23",
-      "2/24",
-      "2/25",
-      "2/26",
-      "2/27",
-      "2/28",
-      "3/1",
+      "2월 23일",
+      "2월 24일",
+      "2월 25일",
+      "2월 26일",
+      "2월 27일",
+      "2월 28일",
+      "3월 1일",
       "합산",
       "비고"
     ],
@@ -1452,13 +1447,13 @@ window.WEEKLY_DATA = {
   "3월 1주차": {
     "columns": [
       "닉네임",
-      "3/2",
-      "3/3",
-      "3/4",
-      "3/5",
-      "3/6",
-      "3/7",
-      "3/8",
+      "3월 2일",
+      "3월 3일",
+      "3월 4일",
+      "3월 5일",
+      "3월 6일",
+      "3월 7일",
+      "3월 8일",
       "합산",
       "비고"
     ],
@@ -1905,13 +1900,13 @@ window.WEEKLY_DATA = {
   "3월 2주차": {
     "columns": [
       "닉네임",
-      "3/9",
-      "3/10",
-      "3/11",
-      "3/12",
-      "3/13",
-      "3/14",
-      "3/15",
+      "3월 9일",
+      "3월 10일",
+      "3월 11일",
+      "3월 12일",
+      "3월 13일",
+      "3월 14일",
+      "3월 15일",
       "합산 (승률)",
       "비고"
     ],
@@ -2095,7 +2090,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": null,
         "before": [
           "고유결",
           "W",
@@ -2111,7 +2106,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": null,
         "before": [
           "건반윤",
           "",
@@ -2127,7 +2122,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": null,
         "before": [
           "밴슨분",
           "L",
@@ -2143,7 +2138,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": null,
         "before": [
           "센만경",
           "",
@@ -2285,39 +2280,23 @@ window.WEEKLY_DATA = {
         "after": [
           ""
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
+      "label": "합산 (승률)",
       "total": "",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "red",
+        "red",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -2326,13 +2305,13 @@ window.WEEKLY_DATA = {
   "3월 3주차": {
     "columns": [
       "닉네임",
-      "3/16",
-      "3/17",
-      "3/18",
-      "3/19",
-      "3/20",
-      "3/21",
-      "3/22",
+      "3월 16일",
+      "3월 17일",
+      "3월 18일",
+      "3월 19일",
+      "3월 20일",
+      "3월 21일",
+      "3월 22일",
       "합산 (승률)",
       "비고"
     ],
@@ -2738,39 +2717,23 @@ window.WEEKLY_DATA = {
         "after": [
           ""
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "84 (52%)",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -2779,13 +2742,13 @@ window.WEEKLY_DATA = {
   "3월 4주차": {
     "columns": [
       "닉네임",
-      "3/23",
-      "3/24",
-      "3/25",
-      "3/26",
-      "3/27",
-      "3/28",
-      "3/29",
+      "3월 23일",
+      "3월 24일",
+      "3월 25일",
+      "3월 26일",
+      "3월 27일",
+      "3월 28일",
+      "3월 29일",
       "합산 (승률)",
       "비고"
     ],
@@ -3143,39 +3106,23 @@ window.WEEKLY_DATA = {
         "after": [
           ""
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "84 (50%)",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -3184,13 +3131,13 @@ window.WEEKLY_DATA = {
   "4월 1주차": {
     "columns": [
       "닉네임",
-      "3/30",
-      "3/31",
-      "4/1",
-      "4/2",
-      "4/3",
-      "4/4",
-      "4/5",
+      "3월 30일",
+      "3월 31일",
+      "4월 1일",
+      "4월 2일",
+      "4월 3일",
+      "4월 4일",
+      "4월 5일",
       "합산 (승률)",
       "비고"
     ],
@@ -3596,39 +3543,23 @@ window.WEEKLY_DATA = {
         "after": [
           ""
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "83 (42%)",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "red",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -4017,39 +3948,23 @@ window.WEEKLY_DATA = {
         "after": [
           ""
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "82 (46%)",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "red",
+        "red",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -4428,41 +4343,24 @@ window.WEEKLY_DATA = {
           "",
           "명유"
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "82 (46%)",
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "84 (54%)",
       "after": [
-        "",
+        "82 (46%)",
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null,
         null
@@ -4859,41 +4757,24 @@ window.WEEKLY_DATA = {
           "",
           "길마"
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "82 (46%)",
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "82 (49%)",
       "after": [
-        "",
+        "82 (46%)",
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "red",
+        "green",
+        "green",
+        "green",
+        "green",
+        "red",
         null,
         null,
         null
@@ -4907,9 +4788,9 @@ window.WEEKLY_DATA = {
       "4월 28일",
       "4월 29일",
       "4월 30일",
-      "4월 31일",
-      "4월 32일",
-      "4월 33일",
+      "5월 1일",
+      "5월 2일",
+      "5월 3일",
       "합산 (승률)",
       "저번주",
       "비고"
@@ -4918,12 +4799,97 @@ window.WEEKLY_DATA = {
     "tailMode": "status",
     "rows": [
       {
+        "status": "green",
+        "before": [
+          "여섯열셋",
+          "WL",
+          "WL",
+          "L",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "4 (50%)",
+          ""
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "네리으",
+          "",
+          "W",
+          "L",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (40%)",
+          ""
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "승헌",
+          "L",
+          "",
+          "W",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "3 (0%)",
+          ""
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "쳀시",
+          "",
+          "W",
+          "W",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (80%)",
+          ""
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "별모알(앵무관찰자)",
+          "L",
+          "L",
+          "L",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (40%)",
+          ""
+        ]
+      },
+      {
         "status": null,
         "before": [
           "연봄=송나봄",
           "L",
           "",
-          "",
+          "W",
           "",
           "",
           "",
@@ -4932,6 +4898,23 @@ window.WEEKLY_DATA = {
         "after": [
           "8 (50%)",
           "야자"
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "임딕=재완",
+          "",
+          "",
+          "L",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (60%)",
+          ""
         ]
       },
       {
@@ -4948,40 +4931,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "6 (50%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "쳀시",
-          "",
-          "W",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (80%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "임딕=재완",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (60%)",
           ""
         ]
       },
@@ -5005,129 +4954,10 @@ window.WEEKLY_DATA = {
       {
         "status": null,
         "before": [
-          "별모알(앵무관찰자)",
-          "L",
-          "L",
+          "까옹+캬옹",
           "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (40%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "네리으",
           "",
           "W",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (40%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "여섯열셋",
-          "WL",
-          "WL",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (50%)",
-          ""
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "세대큪(이바닥)",
-          "W",
-          "W",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (40%)",
-          "4번만 가능"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "밴슨분",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (50%)",
-          "격주로 3/7나눠서"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "신호",
-          "",
-          "W",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (25%)",
-          "3~4번 가능"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "흐흉(쿠노예)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (100%)",
-          "군대"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "고유결",
-          "",
-          "",
-          "",
           "",
           "",
           "",
@@ -5135,7 +4965,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "0 (0%)",
-          "고3"
+          ""
         ]
       },
       {
@@ -5152,23 +4982,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "3 (100%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "승헌",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "3 (0%)",
           ""
         ]
       },
@@ -5207,6 +5020,125 @@ window.WEEKLY_DATA = {
         ]
       },
       {
+        "status": "yellow",
+        "before": [
+          "세대큪(이바닥)",
+          "W",
+          "W",
+          "W",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (40%)",
+          "4번만 가능"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "신호",
+          "",
+          "W",
+          "",
+          "L",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "4 (25%)",
+          "3~4번 가능"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "밴슨분",
+          "L",
+          "",
+          "L",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "4 (50%)",
+          "격주로 3/7나눠서"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "흐흉(쿠노예)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "4 (100%)",
+          "군대"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "고유결",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "0 (0%)",
+          "고3"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "리즈",
+          "W",
+          "L",
+          "W",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "6 (17%)",
+          "랭운"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "자자",
+          "",
+          "L",
+          "W",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          "부길마"
+        ]
+      },
+      {
         "status": "gray",
         "before": [
           "연휴일",
@@ -5220,24 +5152,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "6 (50%)",
-          "명유"
-        ]
-      },
-      {
-        "status": "gray",
-        "before": [
-          "리즈",
-          "W",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "6 (17%)",
-          "랭운"
+          "명유, 화해해라."
         ]
       },
       {
@@ -5277,23 +5192,6 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "자자",
-          "",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          "부길마"
-        ]
-      },
-      {
-        "status": "gray",
-        "before": [
           "밋",
           "",
           "",
@@ -5307,36 +5205,19 @@ window.WEEKLY_DATA = {
           "0 (0%)",
           "길마"
         ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "합산 (승률)",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "82 (46%)",
-          ""
-        ]
       }
     ],
     "summary": {
-      "label": "",
-      "total": "",
+      "label": "합산 (승률)",
+      "total": "42 (60%)",
       "after": [
-        "",
+        "82 (46%)",
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
+        "green",
+        "green",
         null,
         null,
         null,
