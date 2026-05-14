@@ -307,19 +307,19 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "",
-      "total": "",
+      "total": "84",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -616,19 +616,19 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "",
-      "total": "",
+      "total": "83",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "red",
+        "green",
+        "green",
+        "green",
         null,
         null
       ]
@@ -1033,7 +1033,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "",
-      "total": "",
+      "total": "82",
       "after": [
         "",
         "",
@@ -1041,13 +1041,13 @@ window.WEEKLY_DATA = {
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "red",
+        "green",
         null,
         null,
         null,
@@ -1280,7 +1280,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": "yellow",
         "before": [
           "벽묻피",
           "",
@@ -1296,7 +1296,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": "yellow",
         "before": [
           "봄풀",
           "",
@@ -1308,7 +1308,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          ""
+          "명유로 전환"
         ]
       },
       {
@@ -1426,19 +1426,19 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "",
-      "total": "",
+      "total": "77",
       "after": [
         ""
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "red",
+        "green",
+        "green",
+        "green",
+        "green",
+        "red",
+        "red",
         null,
         null
       ]
@@ -1601,7 +1601,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "아가영매 ㅜ"
+          ""
         ]
       },
       {
@@ -1633,7 +1633,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주는거인데 체크하래"
+          "용병(체크는 필요)"
         ]
       },
       {
@@ -1681,7 +1681,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "군대이슈로 명유"
+          "군대->명유로 전환"
         ]
       },
       {
@@ -1745,7 +1745,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -1793,7 +1793,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "길마머해"
+          "길마"
         ]
       },
       {
@@ -1809,7 +1809,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "랭유아님"
+          "명유"
         ]
       },
       {
@@ -1825,7 +1825,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주러 왔다가 길탈"
+          "용병이었다가 길탈"
         ]
       },
       {
@@ -1857,7 +1857,7 @@ window.WEEKLY_DATA = {
           "1"
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -1885,13 +1885,13 @@ window.WEEKLY_DATA = {
       ],
       "colors": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        "green",
+        "green",
+        "green",
+        "green",
+        "red",
+        "green",
+        "red",
         null,
         null
       ]
@@ -2086,11 +2086,11 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "12일 길갑, 4판된다함"
+          "12일 길갑, 4판만 가능"
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
           "고유결",
           "W",
@@ -2106,7 +2106,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
           "건반윤",
           "",
@@ -2122,7 +2122,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
           "밴슨분",
           "L",
@@ -2138,7 +2138,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
           "센만경",
           "",
@@ -2166,7 +2166,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -2214,7 +2214,7 @@ window.WEEKLY_DATA = {
           "W"
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -2230,7 +2230,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "명유인데 도와줌"
+          "명유"
         ]
       },
       {
@@ -2619,7 +2619,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -2651,7 +2651,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "도와주러 옴"
+          "용병"
         ]
       },
       {
@@ -2667,7 +2667,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "명유인데 도와줌"
+          "명유"
         ]
       },
       {
@@ -3008,7 +3008,7 @@ window.WEEKLY_DATA = {
           ""
         ],
         "after": [
-          "야자, 7일 미접인데 머임"
+          "7일 미접"
         ]
       },
       {
@@ -4670,7 +4670,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "5 (40%)",
-          "정지? 명테받으시네"
+          "해외출장"
         ]
       },
       {
@@ -5169,7 +5169,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "6 (50%)",
-          "명유, 화해해라."
+          "명유"
         ]
       },
       {
@@ -5583,7 +5583,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "1 (100%)",
-          "명유, 화해해라."
+          "명유"
         ]
       },
       {
@@ -6031,7 +6031,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "2 (50%)",
-          "명유, 화해해라."
+          "명유"
         ]
       },
       {
