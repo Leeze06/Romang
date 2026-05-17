@@ -4696,8 +4696,8 @@ window.WEEKLY_DATA = {
           "리즈",
           "L",
           "L",
-          "L",
-          "L",
+          "W",
+          "W",
           "L",
           "W",
           ""
@@ -4761,7 +4761,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "82 (49%)",
+      "total": "82 (51%)",
       "after": [
         "82 (46%)",
         ""
@@ -5117,7 +5117,7 @@ window.WEEKLY_DATA = {
           "W"
         ],
         "after": [
-          "6 (17%)",
+          "6 (50%)",
           "랭운"
         ]
       },
@@ -5704,7 +5704,7 @@ window.WEEKLY_DATA = {
           "W",
           "WW",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "7 (43%)",
@@ -5746,7 +5746,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "네리으",
           "W",
@@ -5755,7 +5755,7 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "",
-          ""
+          "L"
         ],
         "after": [
           "6 (33%)",
@@ -5763,7 +5763,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "힘줄절단",
           "",
@@ -5772,7 +5772,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "",
-          ""
+          "L"
         ],
         "after": [
           "5 (60%)",
@@ -5780,7 +5780,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "구라터끼",
           "",
@@ -5789,7 +5789,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "5 (40%)",
@@ -5797,7 +5797,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "센만경",
           "L",
@@ -5806,7 +5806,7 @@ window.WEEKLY_DATA = {
           "",
           "L",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "5 (40%)",
@@ -5814,7 +5814,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "셰나",
           "L",
@@ -5823,7 +5823,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "L",
-          ""
+          "W"
         ],
         "after": [
           "2 (0%)",
@@ -5874,7 +5874,7 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "",
-          ""
+          "W"
         ],
         "after": [
           "2 (0%)",
@@ -5942,7 +5942,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "",
-          ""
+          "L"
         ],
         "after": [
           "5 (20%)",
@@ -5959,7 +5959,7 @@ window.WEEKLY_DATA = {
           "W",
           "",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "3 (67%)",
@@ -6010,7 +6010,7 @@ window.WEEKLY_DATA = {
           "",
           "",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "0 (0%)",
@@ -6027,7 +6027,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "7 (29%)",
@@ -6061,7 +6061,7 @@ window.WEEKLY_DATA = {
           "",
           "",
           "",
-          ""
+          "L"
         ],
         "after": [
           "0 (0%)",
@@ -6122,7 +6122,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "70 (47%)",
+      "total": "82 (45%)",
       "after": [
         "82 (46%)",
         ""
@@ -6135,7 +6135,7 @@ window.WEEKLY_DATA = {
         "red",
         "green",
         "green",
-        null,
+        "green",
         null,
         null,
         null
