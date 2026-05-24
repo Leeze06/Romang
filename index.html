@@ -3,157 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>로망 길랭표</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box}
-  body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;margin:0;background:#f5f7fa;color:#2c3e50}
-  header{background:linear-gradient(135deg,#4a6fa5,#6b8fc7);color:#fff;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-  header h1{margin:0;font-size:26px}
-  .container{max-width:1400px;margin:24px auto;padding:0 20px}
-  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px;font-size:13px}
-  .legend span{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:#fff;border-radius:20px;border:1px solid #e5eaf0}
-  .sw{width:14px;height:14px;border-radius:3px;border:1px solid rgba(0,0,0,.1)}
-  .sw.green{background:#C6EFCE}.sw.red{background:#FFC7CE}.sw.yellow{background:#FFEB9C}.sw.gray{background:#D9D9D9}
-  .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-  .tab{padding:10px 16px;background:#fff;border:1px solid #dce3ec;border-radius:8px;cursor:pointer;font-size:14px;transition:.2s}
-  .tab:hover{background:#eef3fa}
-  .tab.active{background:#4a6fa5;color:#fff;border-color:#4a6fa5}
-  .panel{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow-x:auto}
-  .panel h2{margin:0 0 14px;font-size:18px;color:#4a6fa5}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:8px 10px;border:1px solid #e5eaf0;text-align:center;white-space:nowrap}
-  th{background:#f0f4fa;font-weight:600;color:#34495e;position:sticky;top:0}
-  td:first-child,th:first-child{text-align:left;font-weight:600}
-  td.green{background:#C6EFCE}
-  td.red{background:#FFC7CE}
-  td.yellow{background:#FFEB9C}
-  td.gray{background:#D9D9D9}
-  footer{text-align:center;padding:20px;color:#95a5a6;font-size:12px}
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0a1220; min-height: 100%; }
+  body {
+    font-family: 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #dbe8ff;
+  }
+  /* Hide native scrollbars on the inner scrollers for a cleaner look */
+  ::-webkit-scrollbar { height: 8px; width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(120, 180, 255, 0.16); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(120, 180, 255, 0.32); }
+  button { font-family: inherit; }
+  #root { min-height: 100vh; }
 </style>
 </head>
 <body>
-<header><h1>🎮 로망 길랭표</h1></header>
-<div class="container">
-  <div class="legend">
-    <span><i class="sw green"></i>충족</span>
-    <span><i class="sw red"></i>미달</span>
-    <span><i class="sw yellow"></i>미달(사유 인정)</span>
-    <span><i class="sw gray"></i>운영진/기타</span>
-  </div>
-  <div class="tabs" id="tabs"></div>
-  <div class="panel" id="panel"></div>
-</div>
-<footer></footer>
-<script src="weekly-data.js"></script>
-<script>
-const DATA = window.WEEKLY_DATA || {};
-const tabs = document.getElementById('tabs');
-const panel = document.getElementById('panel');
-const names = Object.keys(DATA);
+<div id="root"></div>
 
-function esc(value) {
-  return String(value ?? '').replace(/[&<>]/g, (match) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[match]));
-}
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-function getTotalIndex(week) {
-  return week.columns.findIndex((column) => String(column).startsWith('합산'));
-}
+<!-- Data -->
+<script src="data/weekly-data.js"></script>
 
-function getResultStats(value) {
-  const text = String(value || '');
-  const wins = (text.match(/W/g) || []).length;
-  const losses = (text.match(/L/g) || []).length;
-  return { wins, attempts: wins + losses };
-}
+<!-- Shared utilities -->
+<script type="text/babel" src="shared/utils.jsx"></script>
 
-function formatTotal(mode, values) {
-  if (mode === 'count') {
-    return String(values.reduce((sum, value) => sum + (parseInt(value || '0', 10) || 0), 0));
-  }
-
-  const stats = values.reduce((acc, value) => {
-    const { wins, attempts } = getResultStats(value);
-    acc.wins += wins;
-    acc.attempts += attempts;
-    return acc;
-  }, { wins: 0, attempts: 0 });
-
-  const rate = stats.attempts ? Math.round((stats.wins / stats.attempts) * 100) : 0;
-  return `${stats.attempts} (${rate}%)`;
-}
-
-function getAfterClasses(week, row) {
-  if (week.tailMode === 'status') {
-    return row.after.map(() => row.status);
-  }
-
-  if (week.tailMode === 'custom') {
-    return row.afterClasses || row.after.map(() => null);
-  }
-
-  return row.after.map(() => null);
-}
-
-function buildRows(week) {
-  const totalIndex = getTotalIndex(week);
-  const dayCount = totalIndex - 1;
-  const rows = week.rows.map((row) => {
-    const total = formatTotal(week.mode, row.before.slice(1, dayCount + 1));
-    return {
-      values: [...row.before, total, ...row.after],
-      classes: [...row.before.map(() => row.status), row.status, ...getAfterClasses(week, row)],
-    };
-  });
-
-  const dayValues = Array.from({ length: dayCount }, (_, index) => (
-    formatTotal(week.mode, week.rows.map((row) => row.before[index + 1]))
-  ));
-
-  const summaryTotal = week.summary.total === null
-    ? formatTotal(week.mode, week.rows.flatMap((row) => row.before.slice(1, dayCount + 1)))
-    : week.summary.total;
-
-  rows.push({
-    values: [week.summary.label, ...dayValues, summaryTotal, ...week.summary.after],
-    classes: week.summary.colors,
-  });
-
-  return rows;
-}
-
-function render(name) {
-  document.querySelectorAll('.tab').forEach((tab) => tab.classList.toggle('active', tab.dataset.name === name));
-
-  const week = DATA[name];
-  const rows = buildRows(week);
-  let html = `<h2>${esc(name)}</h2><table><thead><tr>`;
-  week.columns.forEach((column) => {
-    html += `<th>${esc(column)}</th>`;
-  });
-  html += '</tr></thead><tbody>';
-  rows.forEach((row) => {
-    html += '<tr>';
-    row.values.forEach((value, index) => {
-      html += `<td class="${row.classes[index] || ""}">${esc(value)}</td>`;
-    });
-    html += '</tr>';
-  });
-  html += '</tbody></table>';
-  panel.innerHTML = html;
-}
-
-if (names.length === 0) {
-  panel.textContent = '데이터를 불러오지 못했습니다.';
-} else {
-  names.forEach((name) => {
-    const button = document.createElement('button');
-    button.className = 'tab';
-    button.textContent = name;
-    button.dataset.name = name;
-    button.onclick = () => render(name);
-    tabs.appendChild(button);
-  });
-  render(names[0]);
-}
-</script>
+<!-- Stadium dashboard (load order matters: styles → parts → modal → main) -->
+<script type="text/babel" src="stadium/styles.jsx"></script>
+<script type="text/babel" src="stadium/parts.jsx"></script>
+<script type="text/babel" src="stadium/modal.jsx"></script>
+<script type="text/babel" src="stadium/main.jsx"></script>
 </body>
 </html>
