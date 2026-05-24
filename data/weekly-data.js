@@ -177,38 +177,6 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
-        "before": [
-          "밴슨분",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          ""
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "고유결",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "1"
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
         "status": "red",
         "before": [
           "신호",
@@ -266,6 +234,38 @@ window.WEEKLY_DATA = {
           "",
           "1",
           "1",
+          "1"
+        ],
+        "after": [
+          ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "밴슨분",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          ""
+        ],
+        "after": [
+          ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "고유결",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
           "1"
         ],
         "after": [
@@ -470,38 +470,6 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
-        "before": [
-          "페력",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          "1"
-        ],
-        "after": [
-          "14일 길갑"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "벽묻피",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "1"
-        ],
-        "after": [
-          "15일 길갑"
-        ]
-      },
-      {
         "status": "red",
         "before": [
           "송나봄",
@@ -579,6 +547,38 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "페력",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "1"
+        ],
+        "after": [
+          "14일 길갑"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "벽묻피",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1"
+        ],
+        "after": [
+          "15일 길갑"
         ]
       },
       {
@@ -779,63 +779,9 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
-        "before": [
-          "셰나",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          "1",
-          "1"
-        ],
-        "after": [
-          "",
-          "",
-          ""
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "봄풀",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          "",
-          ""
-        ],
-        "after": [
-          "",
-          "",
-          ""
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "햇닢",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          "",
-          ""
-        ],
-        "after": [
-          "",
-          "",
-          ""
-        ]
-      },
-      {
         "status": "red",
         "before": [
-          "송나봄(요사히)",
+          "송나봄",
           "1",
           "",
           "",
@@ -985,6 +931,60 @@ window.WEEKLY_DATA = {
           "",
           "",
           "",
+          "",
+          ""
+        ],
+        "after": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "셰나",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "1",
+          "1"
+        ],
+        "after": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "봄풀",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "",
+          ""
+        ],
+        "after": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "햇닢",
+          "",
+          "",
+          "",
+          "",
+          "1",
           "",
           ""
         ],
@@ -1362,7 +1362,7 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "요사히=yvi=신앙",
+          "송나봄",
           "",
           "",
           "",
@@ -1589,13 +1589,29 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
+        "status": "red",
         "before": [
-          "네리으",
+          "센만경",
+          "",
+          "",
+          "",
+          "",
           "",
           "1",
-          "1",
-          "1",
+          ""
+        ],
+        "after": [
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "페력",
+          "",
+          "",
+          "",
+          "",
           "",
           "",
           ""
@@ -1634,6 +1650,22 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "용병(체크는 필요)"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "네리으",
+          "",
+          "1",
+          "1",
+          "1",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          ""
         ]
       },
       {
@@ -1682,38 +1714,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "군대->명유로 전환"
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "센만경",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "1",
-          ""
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "페력",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
         ]
       },
       {
@@ -1815,7 +1815,7 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "yvi",
+          "신앙",
           "",
           "1",
           "",
@@ -2026,70 +2026,6 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
-        "before": [
-          "흐흉(쿠노예)",
-          "L",
-          "L",
-          "",
-          "",
-          "",
-          "W",
-          "L"
-        ],
-        "after": [
-          "군대"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "큡에",
-          "",
-          "",
-          "L",
-          "",
-          "L",
-          "L",
-          "W"
-        ],
-        "after": [
-          "11일 길갑"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "으익",
-          "",
-          "",
-          "L",
-          "",
-          "",
-          "W",
-          "L"
-        ],
-        "after": [
-          "야자"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "세대큪(이바닥)",
-          "",
-          "",
-          "",
-          "W",
-          "",
-          "W",
-          ""
-        ],
-        "after": [
-          "12일 길갑, 4판만 가능"
-        ]
-      },
-      {
         "status": "red",
         "before": [
           "고유결",
@@ -2154,6 +2090,70 @@ window.WEEKLY_DATA = {
         ]
       },
       {
+        "status": "yellow",
+        "before": [
+          "흐흉(쿠노예)",
+          "L",
+          "L",
+          "",
+          "",
+          "",
+          "W",
+          "L"
+        ],
+        "after": [
+          "군대"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "큡에",
+          "",
+          "",
+          "L",
+          "",
+          "L",
+          "L",
+          "W"
+        ],
+        "after": [
+          "11일 길갑"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "으익",
+          "",
+          "",
+          "L",
+          "",
+          "",
+          "W",
+          "L"
+        ],
+        "after": [
+          "야자"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "이바닥남바완",
+          "",
+          "",
+          "",
+          "W",
+          "",
+          "W",
+          ""
+        ],
+        "after": [
+          "12일 길갑, 4판만 가능"
+        ]
+      },
+      {
         "status": "gray",
         "before": [
           "자자[위인]",
@@ -2188,7 +2188,7 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "룻(구매)",
+          "룻",
           "",
           "",
           "",
@@ -2353,6 +2353,22 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
+          "건네",
+          "",
+          "",
+          "W",
+          "W",
+          "WW",
+          "L",
+          "L"
+        ],
+        "after": [
+          "18일 길갑"
+        ]
+      },
+      {
+        "status": "green",
+        "before": [
           "밴슨분",
           "W",
           "W",
@@ -2380,22 +2396,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "군대"
-        ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "건네",
-          "",
-          "",
-          "W",
-          "W",
-          "WW",
-          "L",
-          "L"
-        ],
-        "after": [
-          "18일 길갑"
         ]
       },
       {
@@ -2449,7 +2449,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "L",
           "",
@@ -2476,6 +2476,54 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "3~4번 가능"
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "여섯열셋",
+          "W",
+          "W",
+          "L",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "건반윤",
+          "L",
+          "",
+          "W",
+          "",
+          "",
+          "L",
+          ""
+        ],
+        "after": [
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "큡에",
+          "",
+          "",
+          "W",
+          "",
+          "W",
+          "",
+          ""
+        ],
+        "after": [
+          ""
         ]
       },
       {
@@ -2543,57 +2591,9 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
-        "before": [
-          "여섯열셋",
-          "W",
-          "W",
-          "L",
-          "W",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "건반윤",
-          "L",
-          "",
-          "W",
-          "",
-          "",
-          "L",
-          ""
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "큡에",
-          "",
-          "",
-          "W",
-          "",
-          "W",
-          "",
-          ""
-        ],
-        "after": [
-          ""
-        ]
-      },
-      {
         "status": "gray",
         "before": [
-          "룻(구매)",
+          "룻",
           "W",
           "W",
           "W",
@@ -2822,7 +2822,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "송나봄=냥나봄?",
+          "송나봄",
           "W",
           "",
           "W",
@@ -2902,7 +2902,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "L",
           "",
@@ -3030,7 +3030,7 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "룻(구매)",
+          "룻",
           "L",
           "",
           "L",
@@ -3227,7 +3227,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "L",
           "",
@@ -3254,70 +3254,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "3~4번 가능"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "연봄=송나봄",
-          "L",
-          "",
-          "L",
-          "",
-          "L",
-          "W",
-          "W"
-        ],
-        "after": [
-          "야자"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "흐흉(쿠노예)",
-          "L",
-          "",
-          "",
-          "L",
-          "W",
-          "W",
-          ""
-        ],
-        "after": [
-          "군대"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "센만경",
-          "",
-          "",
-          "",
-          "W",
-          "L",
-          "",
-          "L"
-        ],
-        "after": [
-          "정지 ~4/2"
-        ]
-      },
-      {
-        "status": "yellow",
-        "before": [
-          "으익",
-          "",
-          "",
-          "L",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "야자, 길랭방 나감"
         ]
       },
       {
@@ -3417,6 +3353,70 @@ window.WEEKLY_DATA = {
         ]
       },
       {
+        "status": "yellow",
+        "before": [
+          "송나봄",
+          "L",
+          "",
+          "L",
+          "",
+          "L",
+          "W",
+          "W"
+        ],
+        "after": [
+          "야자"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "흐흉(쿠노예)",
+          "L",
+          "",
+          "",
+          "L",
+          "W",
+          "W",
+          ""
+        ],
+        "after": [
+          "군대"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "센만경",
+          "",
+          "",
+          "",
+          "W",
+          "L",
+          "",
+          "L"
+        ],
+        "after": [
+          "정지 ~4/2"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "으익",
+          "",
+          "",
+          "L",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "야자, 길랭방 나감"
+        ]
+      },
+      {
         "status": "gray",
         "before": [
           "리즈",
@@ -3499,7 +3499,7 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "룻(구매)",
+          "룻",
           "",
           "L",
           "",
@@ -3728,7 +3728,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "L",
           "",
@@ -3776,7 +3776,7 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "",
           "L",
           "L",
@@ -3824,7 +3824,7 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "몽탄",
+          "재완",
           "",
           "",
           "",
@@ -4024,7 +4024,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "L",
           "W",
           "L",
@@ -4126,7 +4126,7 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "임딕=재완",
+          "재완",
           "W",
           "",
           "L",
@@ -4228,7 +4228,7 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "W",
           "",
@@ -4387,7 +4387,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "W",
           "WL",
           "WL",
@@ -4438,7 +4438,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "임딕=재완",
+          "재완",
           "L",
           "",
           "",
@@ -4506,7 +4506,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "W",
           "L",
@@ -4801,7 +4801,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "W",
           "W",
           "W",
@@ -4852,7 +4852,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "L",
           "",
           "W",
@@ -4886,7 +4886,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "임딕=재완",
+          "재완",
           "",
           "",
           "L",
@@ -5005,7 +5005,7 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "까옹+캬옹",
+          "캬옹",
           "",
           "",
           "W",
@@ -5249,7 +5249,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "L",
           "W",
           "W",
@@ -5436,7 +5436,7 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "임딕=재완",
+          "재완",
           "L",
           "",
           "W",
@@ -5453,7 +5453,7 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "까옹+캬옹",
+          "캬옹",
           "L",
           "",
           "",
@@ -5504,7 +5504,7 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "",
           "",
@@ -5697,7 +5697,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "L",
           "",
           "",
@@ -5935,7 +5935,7 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "까옹+캬옹",
+          "캬옹",
           "",
           "",
           "",
@@ -5952,7 +5952,7 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "W",
           "",
@@ -6162,7 +6162,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "까옹+캬옹",
+          "캬옹",
           "W",
           "W",
           "L",
@@ -6196,7 +6196,7 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "연봄=송나봄",
+          "송나봄",
           "L",
           "",
           "L",
@@ -6279,24 +6279,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
-        "before": [
-          "센만경",
-          "",
-          "W",
-          "L",
-          "L",
-          "",
-          "L",
-          ""
-        ],
-        "after": [
-          "5 (20%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
+        "status": "green",
         "before": [
           "힘줄절단",
           "W",
@@ -6305,7 +6288,7 @@ window.WEEKLY_DATA = {
           "",
           "L",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "5 (40%)",
@@ -6322,10 +6305,44 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "5 (60%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "센만경",
+          "",
+          "W",
+          "L",
+          "L",
+          "",
+          "L",
+          ""
+        ],
+        "after": [
+          "5 (20%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "셰나",
+          "L",
+          "",
+          "L",
+          "",
+          "",
+          "L",
+          "L"
+        ],
+        "after": [
+          "5 (20%)",
           ""
         ]
       },
@@ -6344,23 +6361,6 @@ window.WEEKLY_DATA = {
         "after": [
           "3 (67%)",
           "격주로 3/7나눠서"
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "셰나",
-          "L",
-          "",
-          "L",
-          "",
-          "",
-          "L",
-          ""
-        ],
-        "after": [
-          "5 (20%)",
-          ""
         ]
       },
       {
@@ -6434,14 +6434,14 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
-          "세대큪(이바닥)",
+          "이바닥남바완",
           "",
           "",
           "",
           "W",
           "",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "4 (50%)",
@@ -6570,7 +6570,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "80 (45%)",
+      "total": "84 (44%)",
       "after": [
         "82 (46%)",
         ""
