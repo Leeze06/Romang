@@ -6627,23 +6627,6 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "별모알(앵무관찰자)",
-          "W",
-          "W",
-          "W",
-          "L",
-          "W",
-          "L",
-          ""
-        ],
-        "after": [
-          "0 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "green",
-        "before": [
           "캬옹",
           "L",
           "L",
@@ -6655,6 +6638,23 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "7 (86%)",
+          ""
+        ]
+      },
+      {
+        "status": "green",
+        "before": [
+          "별모알(앵무관찰자)",
+          "W",
+          "W",
+          "W",
+          "L",
+          "W",
+          "L",
+          ""
+        ],
+        "after": [
+          "0 (0%)",
           ""
         ]
       },
@@ -6693,7 +6693,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": "green",
         "before": [
           "쳀시",
           "W",
@@ -6710,7 +6710,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": "green",
         "before": [
           "힘줄절단",
           "L",
@@ -6727,7 +6727,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "red",
+        "status": "green",
         "before": [
           "셰나",
           "L",
@@ -6740,6 +6740,40 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "4 (0%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "센만경",
+          "",
+          "W",
+          "",
+          "",
+          "W",
+          "W",
+          "L"
+        ],
+        "after": [
+          "4 (25%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
+        "before": [
+          "네리으",
+          "W",
+          "",
+          "W",
+          "L",
+          "",
+          "",
+          "L"
+        ],
+        "after": [
+          "5 (40%)",
           ""
         ]
       },
@@ -6763,23 +6797,6 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "네리으",
-          "W",
-          "",
-          "W",
-          "L",
-          "",
-          "",
-          "L"
-        ],
-        "after": [
-          "5 (40%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
           "구라터끼",
           "",
           "W",
@@ -6791,23 +6808,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "5 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "센만경",
-          "",
-          "W",
-          "",
-          "",
-          "W",
-          "W",
-          "L"
-        ],
-        "after": [
-          "4 (25%)",
           ""
         ]
       },
