@@ -6617,7 +6617,7 @@ window.WEEKLY_DATA = {
           "W",
           "WL",
           "WL",
-          ""
+          "LL"
         ],
         "after": [
           "6 (33%)",
@@ -6651,7 +6651,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "7 (86%)",
@@ -6668,7 +6668,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "5 (80%)",
@@ -6702,7 +6702,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "",
-          ""
+          "W"
         ],
         "after": [
           "5 (40%)",
@@ -6719,7 +6719,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "",
-          ""
+          "L"
         ],
         "after": [
           "5 (20%)",
@@ -6736,7 +6736,7 @@ window.WEEKLY_DATA = {
           "",
           "L",
           "",
-          ""
+          "L"
         ],
         "after": [
           "4 (0%)",
@@ -6770,7 +6770,7 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "",
-          ""
+          "L"
         ],
         "after": [
           "5 (40%)",
@@ -6804,7 +6804,7 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "4 (25%)",
@@ -6821,7 +6821,7 @@ window.WEEKLY_DATA = {
           "",
           "",
           "",
-          ""
+          "W"
         ],
         "after": [
           "7 (71%)",
@@ -6889,7 +6889,7 @@ window.WEEKLY_DATA = {
           "W",
           "",
           "",
-          ""
+          "W"
         ],
         "after": [
           "3 (100%)",
@@ -6923,7 +6923,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "7 (43%)",
@@ -7018,7 +7018,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "71 (58%)",
+      "total": "83 (54%)",
       "after": [
         "82 (46%)",
         ""
