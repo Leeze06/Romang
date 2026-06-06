@@ -5556,8 +5556,8 @@ window.WEEKLY_DATA = {
         "status": "gray",
         "before": [
           "리즈",
-          "L",
-          "L",
+          "W",
+          "W",
           "W",
           "L",
           "L",
@@ -5657,7 +5657,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "83 (47%)",
+      "total": "83 (49%)",
       "after": [
         "82 (46%)",
         ""
@@ -6030,7 +6030,7 @@ window.WEEKLY_DATA = {
           "W"
         ],
         "after": [
-          "7 (29%)",
+          "7 (57%)",
           "랭운"
         ]
       },
@@ -6470,7 +6470,7 @@ window.WEEKLY_DATA = {
         "before": [
           "리즈",
           "W",
-          "L",
+          "W",
           "L",
           "W",
           "L",
@@ -6570,7 +6570,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "84 (44%)",
+      "total": "84 (45%)",
       "after": [
         "82 (46%)",
         ""
@@ -6831,23 +6831,6 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "여섯열셋",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
           "승헌",
           "L",
           "",
@@ -6899,6 +6882,23 @@ window.WEEKLY_DATA = {
       {
         "status": "yellow",
         "before": [
+          "여섯열셋",
+          "L",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          "명유로 전환"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
           "고유결",
           "",
           "",
@@ -6926,7 +6926,7 @@ window.WEEKLY_DATA = {
           "W"
         ],
         "after": [
-          "7 (43%)",
+          "7 (57%)",
           "랭운"
         ]
       },
@@ -7262,23 +7262,6 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "여섯열셋",
-          "",
-          "",
-          "",
-          "",
-          "L",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
           "구라터끼",
           "",
           "",
@@ -7387,6 +7370,23 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          "명유"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "여섯열셋",
+          "",
+          "",
+          "",
+          "",
+          "L",
           "",
           ""
         ],
