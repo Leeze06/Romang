@@ -7064,7 +7064,7 @@ window.WEEKLY_DATA = {
           "",
           "WL",
           "WW",
-          "",
+          "WL",
           ""
         ],
         "after": [
@@ -7081,7 +7081,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "W",
-          "",
+          "W",
           ""
         ],
         "after": [
@@ -7115,7 +7115,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "L",
-          "",
+          "W",
           ""
         ],
         "after": [
@@ -7132,7 +7132,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "L",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7149,7 +7149,7 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "W",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7158,7 +7158,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "센만경",
           "L",
@@ -7166,7 +7166,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "L",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7200,7 +7200,7 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "W",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7285,7 +7285,7 @@ window.WEEKLY_DATA = {
           "",
           "L",
           "",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7336,7 +7336,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "L",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7353,7 +7353,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7370,7 +7370,7 @@ window.WEEKLY_DATA = {
           "L",
           "L",
           "",
-          "",
+          "L",
           ""
         ],
         "after": [
@@ -7466,7 +7466,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "60 (47%)",
+      "total": "72 (43%)",
       "after": [
         "82 (46%)",
         ""
@@ -7478,7 +7478,7 @@ window.WEEKLY_DATA = {
         "green",
         "green",
         "green",
-        null,
+        "green",
         null,
         null,
         null,
