@@ -5536,23 +5536,6 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": "yellow",
-        "before": [
-          "사계",
-          "",
-          "",
-          "L",
-          "L",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "0 (0%)",
-          "정지"
-        ]
-      },
-      {
         "status": "gray",
         "before": [
           "리즈",
@@ -5584,6 +5567,23 @@ window.WEEKLY_DATA = {
         "after": [
           "1 (100%)",
           " "
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "사계",
+          "",
+          "",
+          "L",
+          "L",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "0 (0%)",
+          "정지"
         ]
       },
       {
@@ -5850,23 +5850,6 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "사계",
-          "W",
-          "",
-          "W",
-          "",
-          "W",
-          "",
-          "W"
-        ],
-        "after": [
-          "2 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
           "밴슨분",
           "L",
           "",
@@ -6037,6 +6020,23 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
+          "사계",
+          "W",
+          "",
+          "W",
+          "",
+          "W",
+          "",
+          "W"
+        ],
+        "after": [
+          "2 (0%)",
+          ""
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
           "연휴일",
           "",
           "",
@@ -6173,23 +6173,6 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "0 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "사계",
-          "W",
-          "W",
-          "W",
-          "W",
-          "L",
-          "W",
-          "L"
-        ],
-        "after": [
-          "4 (100%)",
           ""
         ]
       },
@@ -6463,6 +6446,23 @@ window.WEEKLY_DATA = {
         "after": [
           "3 (0%)",
           "고3"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "사계",
+          "W",
+          "W",
+          "W",
+          "W",
+          "L",
+          "W",
+          "L"
+        ],
+        "after": [
+          "4 (100%)",
+          ""
         ]
       },
       {
@@ -6814,23 +6814,6 @@ window.WEEKLY_DATA = {
       {
         "status": "red",
         "before": [
-          "사계",
-          "",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "W"
-        ],
-        "after": [
-          "7 (71%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
           "승헌",
           "L",
           "",
@@ -6928,6 +6911,23 @@ window.WEEKLY_DATA = {
         "after": [
           "7 (57%)",
           "랭운"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "사계",
+          "",
+          "L",
+          "",
+          "",
+          "",
+          "",
+          "W"
+        ],
+        "after": [
+          "7 (71%)",
+          ""
         ]
       },
       {
@@ -7160,23 +7160,6 @@ window.WEEKLY_DATA = {
       {
         "status": null,
         "before": [
-          "사계",
-          "W",
-          "W",
-          "W",
-          "L",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "2 (50%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
           "센만경",
           "L",
           "",
@@ -7359,6 +7342,23 @@ window.WEEKLY_DATA = {
         "after": [
           "7 (71%)",
           "랭운"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
+          "사계",
+          "W",
+          "W",
+          "W",
+          "L",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "2 (50%)",
+          "용병"
         ]
       },
       {
