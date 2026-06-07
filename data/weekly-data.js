@@ -6825,7 +6825,7 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "1 (0%)",
-          ""
+          "길탈"
         ]
       },
       {
@@ -7065,7 +7065,7 @@ window.WEEKLY_DATA = {
           "WL",
           "WW",
           "WL",
-          ""
+          "LL"
         ],
         "after": [
           "10 (50%)",
@@ -7082,28 +7082,11 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "7 (43%)",
           ""
-        ]
-      },
-      {
-        "status": "green",
-        "before": [
-          "밴슨분",
-          "W",
-          "L",
-          "W",
-          "L",
-          "W",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (0%)",
-          "격주로 3/7나눠서"
         ]
       },
       {
@@ -7120,6 +7103,23 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "4 (50%)",
+          ""
+        ]
+      },
+      {
+        "status": "green",
+        "before": [
+          "힘줄절단",
+          "L",
+          "W",
+          "",
+          "W",
+          "W",
+          "L",
+          "L"
+        ],
+        "after": [
+          "5 (40%)",
           ""
         ]
       },
@@ -7143,18 +7143,18 @@ window.WEEKLY_DATA = {
       {
         "status": "green",
         "before": [
-          "힘줄절단",
+          "밴슨분",
+          "W",
+          "L",
+          "W",
           "L",
           "W",
           "",
-          "W",
-          "W",
-          "L",
           ""
         ],
         "after": [
-          "5 (40%)",
-          ""
+          "4 (0%)",
+          "격주로 3/7나눠서"
         ]
       },
       {
@@ -7175,24 +7175,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
-        "before": [
-          "별모알(앵무관찰자)",
-          "W",
-          "W",
-          "W",
-          "",
-          "W",
-          "",
-          ""
-        ],
-        "after": [
-          "6 (67%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
+        "status": "green",
         "before": [
           "흐흉(쿠노예)",
           "",
@@ -7201,11 +7184,28 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "6 (67%)",
           "군대"
+        ]
+      },
+      {
+        "status": "green",
+        "before": [
+          "별모알(앵무관찰자)",
+          "W",
+          "W",
+          "W",
+          "",
+          "W",
+          "",
+          "W"
+        ],
+        "after": [
+          "6 (67%)",
+          ""
         ]
       },
       {
@@ -7252,27 +7252,10 @@ window.WEEKLY_DATA = {
           "",
           "",
           "",
-          ""
+          "L"
         ],
         "after": [
           "3 (33%)",
-          ""
-        ]
-      },
-      {
-        "status": "red",
-        "before": [
-          "승헌",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
           ""
         ]
       },
@@ -7286,11 +7269,28 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "L",
-          ""
+          "W"
         ],
         "after": [
           "3 (67%)",
           "4번만 가능"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "몇잎",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "L"
+        ],
+        "after": [
+          "0 (0%)",
+          "0607 길갑"
         ]
       },
       {
@@ -7324,20 +7324,20 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "0 (0%)",
-          "고3"
+          "휴식"
         ]
       },
       {
         "status": "gray",
         "before": [
           "리즈",
-          "L",
-          "L",
+          "W",
+          "W",
           "W",
           "L",
           "L",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "7 (71%)",
@@ -7354,7 +7354,7 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "2 (50%)",
@@ -7371,7 +7371,7 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "L",
-          ""
+          "W"
         ],
         "after": [
           "1 (0%)",
@@ -7466,7 +7466,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "72 (43%)",
+      "total": "84 (44%)",
       "after": [
         "82 (46%)",
         ""
@@ -7479,7 +7479,7 @@ window.WEEKLY_DATA = {
         "green",
         "green",
         "green",
-        null,
+        "green",
         null,
         null,
         null
