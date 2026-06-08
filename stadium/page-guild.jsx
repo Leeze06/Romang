@@ -2,9 +2,10 @@
 // no sidebar; rankings live on the 랭킹 page).
 
 (function () {
-  const { useState, useMemo, useCallback } = React;
+  const { useState, useMemo, useCallback, useRef, useEffect } = React;
   const RD = window.RomangData;
   const S = window.Stadium;
+  const Auth = window.RomangAuth;
 
   function GuildPage() {
     const size = S.useResponsive();
@@ -60,5 +61,84 @@
     );
   }
 
-  ReactDOM.createRoot(document.getElementById('root')).render(<GuildPage />);
+  function LockScreen({ onUnlock }) {
+    const P = S.palette;
+    const [pw, setPw] = useState('');
+    const [err, setErr] = useState(false);
+    const [busy, setBusy] = useState(false);
+    const inputRef = useRef(null);
+    useEffect(() => { if (inputRef.current) inputRef.current.focus(); }, []);
+
+    const submit = async (e) => {
+      if (e) e.preventDefault();
+      if (busy) return;
+      setBusy(true);
+      const ok = await Auth.verify(pw);
+      setBusy(false);
+      if (ok) { Auth.setAuthed(); onUnlock(); }
+      else { setErr(true); setPw(''); if (inputRef.current) inputRef.current.focus(); }
+    };
+
+    return (
+      <div style={{
+        minHeight: '100vh', background: P.bg, color: P.text,
+        fontFamily: 'Pretendard Variable, "Apple SD Gothic Neo", sans-serif',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20,
+        backgroundImage: 'radial-gradient(circle at 20% 0%, rgba(90,217,255,0.06), transparent 50%), radial-gradient(circle at 90% 100%, rgba(34,211,154,0.05), transparent 50%)',
+      }}>
+        <form onSubmit={submit} style={{
+          width: '100%', maxWidth: 360,
+          background: P.panel, border: `1px solid ${P.line}`, borderRadius: 16,
+          padding: '32px 26px', textAlign: 'center',
+          boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
+        }}>
+          <img src="assets/romang-emblem.png" alt="Romang" style={{ height: 64, marginBottom: 14, filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.5))' }} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, marginBottom: 6 }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={P.cyan} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <h1 style={{ margin: 0, fontSize: 19, fontWeight: 800, color: P.text, fontFamily: 'Pretendard Variable, sans-serif' }}>길랭표 잠금</h1>
+          </div>
+          <div style={{ fontSize: 12.5, color: P.dim, marginBottom: 20, lineHeight: 1.5 }}>관리자 전용 페이지입니다.<br />비밀번호를 입력해 주세요.</div>
+
+          <input
+            ref={inputRef}
+            type="password"
+            inputMode="numeric"
+            autoComplete="current-password"
+            value={pw}
+            onChange={(e) => { setPw(e.target.value); setErr(false); }}
+            placeholder="비밀번호"
+            style={{
+              width: '100%', boxSizing: 'border-box',
+              padding: '12px 14px', borderRadius: 10,
+              background: P.bg, color: P.text,
+              border: `1px solid ${err ? P.red : P.line2}`,
+              fontSize: 16, textAlign: 'center', letterSpacing: 4,
+              fontFamily: 'JetBrains Mono, monospace',
+              outline: 'none',
+            }}
+          />
+          {err && <div style={{ marginTop: 10, fontSize: 12, color: P.red, fontWeight: 600 }}>비밀번호가 올바르지 않습니다.</div>}
+
+          <button type="submit" disabled={busy || !pw} style={{
+            marginTop: 18, width: '100%',
+            padding: '12px 14px', borderRadius: 10, border: 'none',
+            background: (busy || !pw) ? 'rgba(90,217,255,0.25)' : `linear-gradient(135deg, ${P.cyan}, ${P.green})`,
+            color: '#06121f', fontSize: 15, fontWeight: 800, cursor: (busy || !pw) ? 'default' : 'pointer',
+            fontFamily: 'Pretendard Variable, sans-serif',
+            transition: 'opacity .15s',
+          }}>{busy ? '확인 중…' : '입장'}</button>
+
+          <a href="index.html" style={{ display: 'inline-block', marginTop: 16, fontSize: 12, color: P.label, textDecoration: 'none' }}>← 메뉴로 돌아가기</a>
+        </form>
+      </div>
+    );
+  }
+
+  function Root() {
+    const [authed, setAuthed] = useState(() => Auth.isAuthed());
+    if (!authed) return <LockScreen onUnlock={() => setAuthed(true)} />;
+    return <GuildPage />;
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
 })();

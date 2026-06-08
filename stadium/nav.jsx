@@ -35,34 +35,11 @@
         <a href="index.html" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
           <Emblem size={mobile ? 36 : 42} />
           <span style={{
-            fontFamily: 'Space Grotesk, Inter, sans-serif',
+            fontFamily: 'Pretendard Variable, sans-serif',
             fontSize: mobile ? 17 : 20, fontWeight: 800, letterSpacing: 2.5,
             color: palette.text,
           }}>ROMANG</span>
         </a>
-
-        <div style={{
-          display: 'flex', gap: 4, padding: 4,
-          background: palette.panel,
-          border: `1px solid ${palette.line}`,
-          borderRadius: 10,
-        }}>
-          {TABS.map((t) => {
-            const active = t.id === current;
-            return (
-              <a key={t.id} href={t.href} style={{
-                padding: mobile ? '7px 12px' : '8px 16px',
-                borderRadius: 7,
-                fontSize: mobile ? 13 : 14, fontWeight: 600,
-                textDecoration: 'none',
-                color: active ? palette.cyan : palette.dim,
-                background: active ? palette.cyanDim : 'transparent',
-                border: `1px solid ${active ? palette.line2 : 'transparent'}`,
-                transition: 'color .12s, background .12s',
-              }}>{t.label}</a>
-            );
-          })}
-        </div>
       </div>
     );
   }
@@ -75,7 +52,7 @@
         minHeight: '100vh',
         background: palette.bg,
         color: palette.text,
-        fontFamily: 'Inter, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif',
+        fontFamily: 'Pretendard Variable, "Apple SD Gothic Neo", sans-serif',
         padding: mobile ? 12 : tablet ? 18 : 24,
         backgroundImage: `radial-gradient(circle at 20% 0%, rgba(90,217,255,0.06), transparent 50%), radial-gradient(circle at 90% 100%, rgba(34,211,154,0.05), transparent 50%)`,
         boxSizing: 'border-box',
@@ -90,7 +67,7 @@
               marginBottom: mobile ? 14 : 20,
             }}>
               <div>
-                {title && <h1 style={{ margin: 0, fontSize: mobile ? 24 : 30, fontWeight: 800, letterSpacing: -0.5, fontFamily: 'Space Grotesk, Inter, sans-serif', color: palette.text }}>{title}</h1>}
+                {title && <h1 style={{ margin: 0, fontSize: mobile ? 24 : 30, fontWeight: 800, letterSpacing: -0.5, fontFamily: 'Pretendard Variable, sans-serif', color: palette.text }}>{title}</h1>}
                 {subtitle && <div style={{ marginTop: 6, fontSize: mobile ? 12 : 13, color: palette.dim }}>{subtitle}</div>}
               </div>
               {right && <div style={{ display: 'flex', justifyContent: mobile ? 'flex-start' : 'flex-end' }}>{right}</div>}
@@ -101,7 +78,7 @@
             marginTop: 24, padding: '14px 0', textAlign: 'center',
             fontSize: 10, color: palette.label, letterSpacing: 2, textTransform: 'uppercase',
           }}>
-            로망 랭크전 현황표 · {window.RomangData.WEEK_NAMES.length}주 누적
+            로망 랭크전 현황표
           </div>
         </div>
       </div>

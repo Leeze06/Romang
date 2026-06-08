@@ -29,7 +29,7 @@
       <S.PageShell
         current="ranking" size={size}
         title="랭킹"
-        subtitle={`전체 ${RD.WEEK_NAMES.length}주 누적 · 현역 길드원만 · 탈퇴자 ${leftCount}명 제외`}
+        subtitle={`전체 ${RD.WEEK_NAMES.length}주 누적`}
       >
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
           <Board
@@ -63,7 +63,7 @@
         overflow: 'hidden',
       }}>
         <div style={{ padding: mobile ? '14px 16px' : '16px 20px', borderBottom: `1px solid ${palette.line}`, display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 8 }}>
-          <div style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, letterSpacing: 0.3, color: palette.text, fontFamily: 'Space Grotesk, Inter, sans-serif' }}>{title}</div>
+          <div style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, letterSpacing: 0.3, color: palette.text, fontFamily: 'Pretendard Variable, sans-serif' }}>{title}</div>
           <div style={{ fontSize: 11, color: palette.label }}>{hint}</div>
         </div>
 
@@ -89,8 +89,8 @@
                     boxShadow: i === 0 ? `0 0 12px ${medalColor}55` : 'none',
                   }}>{i + 1}</div>
                   <div style={{ fontSize: mobile ? 12 : 13, fontWeight: 700, color: palette.text, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.nick}</div>
-                  <div style={{ fontFamily: 'Space Grotesk, monospace', fontSize: mobile ? 18 : 22, fontWeight: 800, color: medalColor, letterSpacing: -0.5 }}>{r.primary}</div>
-                  <div style={{ fontSize: 10, color: palette.dim }}>{metricLabel}</div>
+                  <div style={{ fontFamily: 'Pretendard Variable, sans-serif', fontSize: mobile ? 18 : 22, fontWeight: 800, color: medalColor, letterSpacing: -0.5 }}>{r.primary}</div>
+                  <div style={{ fontSize: 10, color: palette.dim }}>{r.sub}</div>
                 </button>
               );
             })}

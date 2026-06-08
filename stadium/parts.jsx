@@ -21,7 +21,7 @@
           background: `linear-gradient(90deg, ${accent || palette.cyan} 0%, transparent 60%)`,
         }} />
         <div style={{ fontSize: mobile ? 10 : 11, color: palette.label, textTransform: 'uppercase', letterSpacing: 1.2, fontWeight: 600 }}>{label}</div>
-        <div style={{ fontSize: mobile ? 22 : 28, fontWeight: 700, color: palette.text, marginTop: 4, fontFamily: 'Space Grotesk, Inter, sans-serif', letterSpacing: -0.5, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{value}</div>
+        <div style={{ fontSize: mobile ? 22 : 28, fontWeight: 700, color: palette.text, marginTop: 4, fontFamily: 'Pretendard Variable, sans-serif', letterSpacing: -0.5, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{value}</div>
         {sub ? <div style={{ fontSize: mobile ? 10 : 11, color: palette.dim, marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{sub}</div> : null}
       </div>
     );
@@ -155,7 +155,6 @@
               </span>
             )}
           </div>
-          <div style={{ fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace', whiteSpace: 'nowrap' }}>{week.mode === 'wl' ? 'W/L MODE' : 'COUNT MODE'} · {dayCount} DAYS</div>
         </div>
 
         <FilterBar

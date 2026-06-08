@@ -61,7 +61,7 @@
             <div style={{ minWidth: 0 }}>
               <div style={{ fontSize: 11, color: palette.label, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 6 }}>Operator Dossier</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-                <h2 style={{ margin: 0, fontSize: mobile ? 22 : 28, fontWeight: 800, color: palette.text, fontFamily: 'Space Grotesk, Inter, sans-serif', letterSpacing: -0.5 }}>{player.nick}</h2>
+                <h2 style={{ margin: 0, fontSize: mobile ? 22 : 28, fontWeight: 800, color: palette.text, fontFamily: 'Pretendard Variable, sans-serif', letterSpacing: -0.5 }}>{player.nick}</h2>
                 {player.left ? (
                   <Pill color={palette.gray} bg="rgba(93,108,135,0.15)" border="rgba(93,108,135,0.4)">탈퇴</Pill>
                 ) : lastStatus ? (
@@ -183,7 +183,7 @@
           background: `linear-gradient(90deg, ${accent} 0%, transparent 60%)`,
         }} />
         <div style={{ fontSize: 10, color: palette.label, textTransform: 'uppercase', letterSpacing: 1.2, fontWeight: 600 }}>{label}</div>
-        <div style={{ fontSize: 22, fontWeight: 700, color: palette.text, marginTop: 4, fontFamily: 'Space Grotesk, Inter, sans-serif', letterSpacing: -0.3 }}>{value}</div>
+        <div style={{ fontSize: 22, fontWeight: 700, color: palette.text, marginTop: 4, fontFamily: 'Pretendard Variable, sans-serif', letterSpacing: -0.3 }}>{value}</div>
         {sub && <div style={{ fontSize: 10, color: palette.dim, marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{sub}</div>}
       </div>
     );

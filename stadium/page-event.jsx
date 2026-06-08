@@ -119,7 +119,7 @@
       <div style={{ background: palette.panel, border: `1px solid ${palette.line}`, borderRadius: 14, overflow: 'hidden' }}>
         <div style={{ padding: mobile ? '14px 16px' : '16px 20px', borderBottom: `1px solid ${palette.line}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, color: palette.text, fontFamily: 'Space Grotesk, Inter, sans-serif' }}>실시간 점수판</span>
+            <span style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, color: palette.text, fontFamily: 'Pretendard Variable, sans-serif' }}>실시간 점수판</span>
             {hasData && <span style={{ fontSize: 10, padding: '2px 8px', borderRadius: 4, background: palette.greenSoft, color: palette.green, border: `1px solid ${palette.greenLine}`, fontWeight: 700, letterSpacing: 1 }}>LIVE</span>}
           </div>
           <div style={{ fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>{hasData ? `${scores.length}명 참여` : '집계 대기'}</div>
@@ -206,7 +206,7 @@
               ))}
 
               <div style={{ width: mobile ? 60 : 90, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
-                <span style={{ fontFamily: 'Space Grotesk, monospace', fontSize: mobile ? 18 : 20, fontWeight: 800, color: podium ? medalColor : palette.text, letterSpacing: -0.5 }}>{p.total}</span>
+                <span style={{ fontFamily: 'Pretendard Variable, sans-serif', fontSize: mobile ? 18 : 20, fontWeight: 800, color: podium ? medalColor : palette.text, letterSpacing: -0.5 }}>{p.total}</span>
                 {!mobile && (
                   <div style={{ width: '100%', height: 4, background: palette.bg, borderRadius: 2, overflow: 'hidden' }}>
                     <div style={{ width: `${(p.total / maxScore) * 100}%`, height: '100%', background: podium ? medalColor : palette.cyan }} />
