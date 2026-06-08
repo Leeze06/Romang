@@ -152,6 +152,97 @@
     return i >= 0 && i < WEEK_NAMES.length - 1 ? WEEK_NAMES[i + 1] : null;
   }
 
+  // ---- Event scoring -----------------------------------------------------
+  // "6월 길랭 승점 이벤트": 6/8 ~ 6/21, 2주.
+  // 승 2점 · 패 1점. 주 최대 7판까지만 적립, 초과 시 승리 우선.
+  //   ex) 한 주 10판(7승 3패) → 7승만 적립 = 14점
+  const EVENT = {
+    title: '6월 길랭 승점 이벤트',
+    period: '6월 8일 ~ 6월 21일',
+    start: { month: 6, day: 8 },
+    end: { month: 6, day: 21 },
+    weeklyCap: 7,
+    winPts: 2,
+    lossPts: 1,
+    weeks: [
+      { label: '1주차', range: '6/8–6/14', start: { month: 6, day: 8 }, end: { month: 6, day: 14 } },
+      { label: '2주차', range: '6/15–6/21', start: { month: 6, day: 15 }, end: { month: 6, day: 21 } },
+    ],
+    prizes: [
+      { rank: 1, medal: '🥇', label: '치킨 기프티콘' },
+      { rank: 2, medal: '🥈', label: '편의점 15,000원 쿠폰' },
+      { rank: 3, medal: '🥉', label: '베스킨라빈스 파인트' },
+    ],
+  };
+
+  function parseDayCol(col) {
+    const m = String(col).match(/(\d+)\s*월\s*(\d+)\s*일/);
+    if (!m) return null;
+    return { month: +m[1], day: +m[2] };
+  }
+  function dateOrd(month, day) { return month * 100 + day; }
+
+  // Returns per-player event scores, sorted (excludes players who left).
+  function buildEventScores() {
+    const playerIndex = buildPlayerIndex();
+    const cap = EVENT.weeklyCap;
+    const acc = {}; // nick -> { nick, weeks: [{wins,losses}, ...] }
+    const ensure = (nick) => {
+      if (!acc[nick]) acc[nick] = { nick, weeks: EVENT.weeks.map(() => ({ wins: 0, losses: 0 })) };
+      return acc[nick];
+    };
+
+    WEEK_NAMES.forEach((wn) => {
+      const week = DATA[wn];
+      if (week.mode !== 'wl') return;
+      const { dayCols } = weekShape(week);
+      dayCols.forEach((col, di) => {
+        const date = parseDayCol(col);
+        if (!date) return;
+        const ord = dateOrd(date.month, date.day);
+        const ewi = EVENT.weeks.findIndex((w) =>
+          ord >= dateOrd(w.start.month, w.start.day) && ord <= dateOrd(w.end.month, w.end.day));
+        if (ewi < 0) return; // outside event window
+        week.rows.forEach((row) => {
+          const nick = row.before[0];
+          if (!nick) return;
+          const r = parseWL(row.before[1 + di]);
+          if (r.plays === 0) return;
+          const a = ensure(nick);
+          a.weeks[ewi].wins += r.wins;
+          a.weeks[ewi].losses += r.losses;
+        });
+      });
+    });
+
+    const results = Object.values(acc).map((p) => {
+      const weeks = p.weeks.map((w) => {
+        const scoredWins = Math.min(w.wins, cap);
+        const remaining = Math.max(0, cap - scoredWins);
+        const scoredLosses = Math.min(w.losses, remaining);
+        const score = scoredWins * EVENT.winPts + scoredLosses * EVENT.lossPts;
+        const plays = w.wins + w.losses;
+        return { wins: w.wins, losses: w.losses, scoredWins, scoredLosses, score, plays, capped: plays > cap };
+      });
+      const total = weeks.reduce((s, w) => s + w.score, 0);
+      const totalPlays = weeks.reduce((s, w) => s + w.plays, 0);
+      const totalWins = weeks.reduce((s, w) => s + w.wins, 0);
+      const totalLosses = weeks.reduce((s, w) => s + w.losses, 0);
+      const left = playerIndex[p.nick] ? playerIndex[p.nick].left : false;
+      return { nick: p.nick, weeks, total, totalPlays, totalWins, totalLosses, left };
+    })
+      .filter((p) => p.totalPlays > 0 && !p.left)
+      .sort((a, b) => b.total - a.total || b.totalPlays - a.totalPlays || a.nick.localeCompare(b.nick));
+
+    // assign dense ranks (ties share a rank)
+    let lastScore = null, lastRank = 0;
+    results.forEach((p, i) => {
+      if (p.total !== lastScore) { lastRank = i + 1; lastScore = p.total; }
+      p.rank = lastRank;
+    });
+    return results;
+  }
+
   window.RomangData = {
     DATA,
     WEEK_NAMES,
@@ -167,5 +258,8 @@
     prevWeek,
     nextWeek,
     STATUS_RANK,
+    EVENT,
+    parseDayCol,
+    buildEventScores,
   };
 })();

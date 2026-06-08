@@ -2,47 +2,178 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>로망 길랭표</title>
+<title>로망 · ROMANG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a1220">
+<link rel="icon" type="image/png" href="assets/romang-emblem.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #0a1220;
+    --panel: #0f1a2e;
+    --panel2: #13243d;
+    --line: rgba(120,180,255,0.10);
+    --line2: rgba(120,180,255,0.18);
+    --text: #dbe8ff;
+    --dim: #7a8bad;
+    --label: #5e7194;
+    --cyan: #5ad9ff;
+    --green: #22d39a;
+    --yellow: #f5c244;
+  }
   *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: #0a1220; min-height: 100%; }
+  html, body { margin: 0; padding: 0; }
   body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
     font-family: 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #dbe8ff;
+    background-image:
+      radial-gradient(circle at 15% -5%, rgba(90,217,255,0.10), transparent 45%),
+      radial-gradient(circle at 90% 105%, rgba(34,211,154,0.08), transparent 45%);
+    display: flex;
+    justify-content: center;
   }
-  /* Hide native scrollbars on the inner scrollers for a cleaner look */
-  ::-webkit-scrollbar { height: 8px; width: 8px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(120, 180, 255, 0.16); border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(120, 180, 255, 0.32); }
-  button { font-family: inherit; }
-  #root { min-height: 100vh; }
+  .wrap {
+    width: 100%;
+    max-width: 480px;
+    padding: 56px 22px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emblem {
+    width: 168px; height: auto; display: block;
+    margin-bottom: 22px;
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.55));
+  }
+  .wordmark {
+    font-family: 'Space Grotesk', Inter, sans-serif;
+    font-size: 30px; font-weight: 800; letter-spacing: 5px;
+    color: var(--text);
+  }
+  .tagline {
+    margin-top: 8px; font-size: 13px; color: var(--dim);
+    letter-spacing: 1px; white-space: nowrap;
+  }
+  .livestat {
+    margin-top: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px;
+    background: var(--panel); border: 1px solid var(--line);
+    font-size: 11px; color: var(--label);
+    font-family: 'JetBrains Mono', monospace; white-space: nowrap;
+  }
+  .livestat .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+  .links { margin-top: 24px; width: 100%; display: flex; flex-direction: column; gap: 14px; }
+
+  .link {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    text-decoration: none; color: inherit;
+    transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .link::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--accent); opacity: 0; transition: opacity .15s ease;
+  }
+  .link:hover {
+    transform: translateY(-2px);
+    border-color: var(--line2);
+    background: var(--panel2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  }
+  .link:hover::before { opacity: 1; }
+
+  .icon {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    color: var(--accent);
+  }
+  .icon svg { width: 22px; height: 22px; display: block; }
+
+  .body { flex: 1; min-width: 0; }
+  .title-row { display: flex; align-items: center; gap: 8px; }
+  .title { font-size: 16px; font-weight: 700; color: var(--text); }
+  .desc { margin-top: 3px; font-size: 12px; color: var(--dim); line-height: 1.4; }
+  .badge {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+    padding: 2px 7px; border-radius: 999px;
+    background: color-mix(in srgb, var(--green) 16%, transparent);
+    color: var(--green);
+    border: 1px solid color-mix(in srgb, var(--green) 40%, transparent);
+  }
+  .chev { color: var(--label); flex-shrink: 0; transition: transform .15s ease, color .15s ease; }
+  .link:hover .chev { transform: translateX(3px); color: var(--accent); }
+
+  .foot {
+    margin-top: 40px; text-align: center;
+    font-size: 10px; color: var(--label);
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  @media (max-width: 420px) {
+    .wrap { padding-top: 40px; }
+    .emblem { width: 144px; }
+    .link { padding: 16px 14px; gap: 13px; }
+    .icon { width: 42px; height: 42px; }
+  }
 </style>
 </head>
 <body>
-<div id="root"></div>
+<div class="wrap">
+  <img class="emblem" src="assets/romang-emblem.png" alt="Romang">
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <div class="links">
+    <a class="link" href="guild.html" style="--accent: #5ad9ff;">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      </span>
+      <div class="body">
+        <div class="title-row"><span class="title">길랭표</span></div>
+        <div class="desc">주차별 길드전 판수·승패 기록</div>
+      </div>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
 
-<!-- Data -->
-<script src="data/weekly-data.js"></script>
+    <a class="link" href="event.html" style="--accent: #22d39a;">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/><path d="M12 8C12 8 11 3 8 3a2.5 2.5 0 0 0 0 5zM12 8c0 0 1-5 4-5a2.5 2.5 0 0 1 0 5z"/></svg>
+      </span>
+      <div class="body">
+        <div class="title-row"><span class="title">이벤트</span><span class="badge">진행중</span></div>
+        <div class="desc">6월 승점 이벤트 · 6/8–6/21 · 실시간 점수판</div>
+      </div>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
 
-<!-- Shared utilities -->
-<script type="text/babel" src="shared/utils.jsx"></script>
+    <a class="link" href="ranking.html" style="--accent: #f5c244;">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+      </span>
+      <div class="body">
+        <div class="title-row"><span class="title">랭킹</span></div>
+        <div class="desc">누적 승률 TOP</div>
+      </div>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
 
-<!-- Stadium dashboard (load order matters: styles → parts → modal → main) -->
-<script type="text/babel" src="stadium/styles.jsx"></script>
-<script type="text/babel" src="stadium/parts.jsx"></script>
-<script type="text/babel" src="stadium/modal.jsx"></script>
-<script type="text/babel" src="stadium/main.jsx"></script>
+  <div class="foot">로망 랭크전 현황표</div>
+</div>
+
 </body>
 </html>
