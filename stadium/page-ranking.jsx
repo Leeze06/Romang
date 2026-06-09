@@ -67,30 +67,31 @@
           <div style={{ fontSize: 11, color: palette.label }}>{hint}</div>
         </div>
 
-        {/* Podium for top 3 */}
+        {/* Podium for top 3 — crown + laurel medals */}
         {top3.length > 0 && (
-          <div style={{ padding: mobile ? '14px 16px 6px' : '18px 20px 8px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+          <div style={{ padding: mobile ? '16px 14px 8px' : '24px 20px 12px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: mobile ? 8 : 14, alignItems: 'end' }}>
             {top3.map((p, i) => {
               const r = render(p);
-              const medalColor = i === 0 ? palette.green : i === 1 ? palette.cyan : palette.yellow;
+              const medal = ['assets/rank1.png', 'assets/rank2.png', 'assets/rank3.png'][i];
+              // gold / silver / bronze tints for the metric text
+              const medalColor = i === 0 ? '#f1c75c' : i === 1 ? '#cdd6e3' : '#d59a6c';
+              const medalSize = i === 0 ? (mobile ? 92 : 124) : (mobile ? 74 : 102);
               return (
                 <button key={p.nick} onClick={() => onPick(p.nick)} className="sd-podium" style={{
-                  background: palette.bg, border: `1px solid ${palette.line2}`, borderRadius: 12,
-                  padding: mobile ? '12px 8px' : '16px 12px', cursor: 'pointer',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+                  background: palette.bg, border: `1px solid ${palette.line2}`, borderRadius: 14,
+                  padding: mobile ? '12px 6px 14px' : '16px 10px 18px', cursor: 'pointer',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: mobile ? 5 : 7,
                   textAlign: 'center', color: 'inherit', font: 'inherit',
-                  transform: i === 0 ? 'translateY(-4px)' : 'none',
+                  transform: i === 0 ? 'translateY(-6px)' : 'none',
+                  boxShadow: i === 0 ? `0 10px 30px ${medalColor}22` : 'none',
                 }}>
-                  <div style={{
-                    width: 30, height: 30, borderRadius: '50%',
-                    border: `2px solid ${medalColor}`, color: medalColor,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontFamily: 'JetBrains Mono, monospace', fontWeight: 800, fontSize: 14,
-                    boxShadow: i === 0 ? `0 0 12px ${medalColor}55` : 'none',
-                  }}>{i + 1}</div>
-                  <div style={{ fontSize: mobile ? 12 : 13, fontWeight: 700, color: palette.text, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.nick}</div>
-                  <div style={{ fontFamily: 'Pretendard Variable, sans-serif', fontSize: mobile ? 18 : 22, fontWeight: 800, color: medalColor, letterSpacing: -0.5 }}>{r.primary}</div>
-                  <div style={{ fontSize: 10, color: palette.dim }}>{r.sub}</div>
+                  <img src={medal} alt={`${i + 1}위`} style={{
+                    width: medalSize, height: medalSize, objectFit: 'contain', display: 'block',
+                    filter: `drop-shadow(0 4px 12px ${medalColor}3a)`,
+                  }} />
+                  <div style={{ fontSize: mobile ? 12 : 14, fontWeight: 700, color: palette.text, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.nick}</div>
+                  <div style={{ fontFamily: 'Pretendard Variable, sans-serif', fontSize: mobile ? 19 : 24, fontWeight: 800, color: medalColor, letterSpacing: -0.5, lineHeight: 1 }}>{r.primary}</div>
+                  <div style={{ fontSize: 10.5, color: palette.dim }}>{r.sub}</div>
                 </button>
               );
             })}

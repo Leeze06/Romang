@@ -25,6 +25,23 @@
     );
   }
 
+  function HomeButton({ mobile }) {
+    return (
+      <a href="index.html" className="sd-homebtn" aria-label="홈으로" title="홈으로" style={{
+        display: 'inline-flex', alignItems: 'center', gap: 8,
+        padding: mobile ? '9px 12px' : '10px 16px',
+        borderRadius: 999, textDecoration: 'none',
+        background: palette.panel, border: `1px solid ${palette.line2}`,
+        color: palette.text, flexShrink: 0,
+        transition: 'transform .15s ease, border-color .15s ease, background .15s ease',
+      }}>
+        <style>{`.sd-homebtn:hover{transform:translateY(-1px);background:${palette.panel2 || '#13243d'};border-color:rgba(120,180,255,0.32);}`}</style>
+        <img src="assets/home-icon.png" alt="" style={{ width: 17, height: 17, display: 'block', opacity: 0.92 }} />
+        <span style={{ fontSize: mobile ? 13 : 14, fontWeight: 700, letterSpacing: 0.2 }}>홈</span>
+      </a>
+    );
+  }
+
   function NavBar({ current, size }) {
     const mobile = size === 'mobile';
     return (
@@ -40,6 +57,7 @@
             color: palette.text,
           }}>ROMANG</span>
         </a>
+        <HomeButton mobile={mobile} />
       </div>
     );
   }
