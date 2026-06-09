@@ -12,10 +12,6 @@
     const mobile = size === 'mobile';
     const compact = size !== 'desktop';
 
-    const [selectedNick, setSelectedNick] = useState(null);
-    const onPick = useCallback((nick) => setSelectedNick(nick), []);
-    const onClose = useCallback(() => setSelectedNick(null), []);
-
     const playerIndex = useMemo(() => RD.buildPlayerIndex(), []);
     const active = useMemo(() => Object.values(playerIndex).filter((p) => !p.left), [playerIndex]);
     const leftCount = useMemo(() => Object.values(playerIndex).filter((p) => p.left).length, [playerIndex]);
@@ -42,16 +38,14 @@
               sub: `${p.totals.wins}승 ${p.totals.losses}패 · ${p.totals.wins + p.totals.losses}판`,
               bar: (p.totals.winRate || 0) / 100,
             })}
-            onPick={onPick} size={size}
+            size={size}
           />
         </div>
-
-        <S.PlayerModal nick={selectedNick} playerIndex={playerIndex} onClose={onClose} size={size} />
       </S.PageShell>
     );
   }
 
-  function Board({ title, hint, metricLabel, rows, render, onPick, size }) {
+  function Board({ title, hint, metricLabel, rows, render, size }) {
     const mobile = size === 'mobile';
     const top3 = rows.slice(0, 3);
     const rest = rows.slice(3);
@@ -77,9 +71,9 @@
               const medalColor = i === 0 ? '#f1c75c' : i === 1 ? '#cdd6e3' : '#d59a6c';
               const medalSize = i === 0 ? (mobile ? 92 : 124) : (mobile ? 74 : 102);
               return (
-                <button key={p.nick} onClick={() => onPick(p.nick)} className="sd-podium" style={{
+                <div key={p.nick} className="sd-podium" style={{
                   background: palette.bg, border: `1px solid ${palette.line2}`, borderRadius: 14,
-                  padding: mobile ? '12px 6px 14px' : '16px 10px 18px', cursor: 'pointer',
+                  padding: mobile ? '12px 6px 14px' : '16px 10px 18px',
                   display: 'flex', flexDirection: 'column', alignItems: 'center', gap: mobile ? 5 : 7,
                   textAlign: 'center', color: 'inherit', font: 'inherit',
                   transform: i === 0 ? 'translateY(-6px)' : 'none',
@@ -92,7 +86,7 @@
                   <div style={{ fontSize: mobile ? 12 : 14, fontWeight: 700, color: palette.text, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.nick}</div>
                   <div style={{ fontFamily: 'Pretendard Variable, sans-serif', fontSize: mobile ? 19 : 24, fontWeight: 800, color: medalColor, letterSpacing: -0.5, lineHeight: 1 }}>{r.primary}</div>
                   <div style={{ fontSize: 10.5, color: palette.dim }}>{r.sub}</div>
-                </button>
+                </div>
               );
             })}
           </div>
@@ -104,10 +98,10 @@
             const r = render(p);
             const rank = i + 4;
             return (
-              <button key={p.nick} onClick={() => onPick(p.nick)} className="sd-rankrow" style={{
+              <div key={p.nick} className="sd-rankrow" style={{
                 display: 'flex', alignItems: 'center', gap: 12,
                 width: '100%', padding: '10px 12px', borderRadius: 8,
-                background: 'transparent', border: 'none', cursor: 'pointer',
+                background: 'transparent', border: 'none',
                 color: 'inherit', font: 'inherit', textAlign: 'left',
               }}>
                 <span style={{ width: 24, fontFamily: 'JetBrains Mono, monospace', fontSize: 12, fontWeight: 700, color: palette.label, textAlign: 'center', flexShrink: 0 }}>{rank}</span>
@@ -119,14 +113,14 @@
                   <div style={{ width: `${Math.min(1, r.bar) * 100}%`, height: '100%', background: palette.cyan }} />
                 </div>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 13, fontWeight: 700, color: palette.text, minWidth: 46, textAlign: 'right' }}>{r.primary}</span>
-              </button>
+              </div>
             );
           })}
           {rows.length === 0 && (
             <div style={{ padding: 24, textAlign: 'center', color: palette.dim, fontSize: 12 }}>표시할 데이터가 없습니다.</div>
           )}
         </div>
-        <style>{`.sd-rankrow:hover, .sd-podium:hover { background: rgba(120,180,255,0.05); }`}</style>
+
       </div>
     );
   }
