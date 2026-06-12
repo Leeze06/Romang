@@ -7504,14 +7504,14 @@ window.WEEKLY_DATA = {
     "tailMode": "status",
     "rows": [
       {
-        "status": null,
+        "status": "green",
         "before": [
           "네리으",
           "W",
           "W",
           "L",
-          "",
-          "",
+          "L",
+          "W",
           "",
           ""
         ],
@@ -7521,14 +7521,14 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
         "before": [
           "별모알(앵무관찰자)",
           "W",
           "W",
           "L",
-          "",
-          "",
+          "L",
+          "W",
           "",
           ""
         ],
@@ -7538,14 +7538,31 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
+        "before": [
+          "캬옹",
+          "L",
+          "L",
+          "L",
+          "L",
+          "L",
+          "",
+          ""
+        ],
+        "after": [
+          "7 (71%)",
+          ""
+        ]
+      },
+      {
+        "status": "green",
         "before": [
           "송나봄",
           "L",
           "L",
           "",
-          "",
-          "",
+          "L",
+          "L",
           "",
           ""
         ],
@@ -7557,17 +7574,17 @@ window.WEEKLY_DATA = {
       {
         "status": null,
         "before": [
-          "캬옹",
-          "L",
-          "L",
-          "L",
+          "쳀시",
           "",
-          "",
+          "L",
+          "L",
+          "W",
+          "L",
           "",
           ""
         ],
         "after": [
-          "7 (71%)",
+          "6 (0%)",
           ""
         ]
       },
@@ -7578,8 +7595,8 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "W",
-          "",
-          "",
+          "W",
+          "W",
           "",
           ""
         ],
@@ -7590,6 +7607,40 @@ window.WEEKLY_DATA = {
       },
       {
         "status": null,
+        "before": [
+          "몇잎",
+          "W",
+          "",
+          "",
+          "L",
+          "W",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          "0607 길갑"
+        ]
+      },
+      {
+        "status": null,
+        "before": [
+          "구라터끼",
+          "",
+          "W",
+          "W",
+          "",
+          "W",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
         "before": [
           "센만경",
           "W",
@@ -7606,58 +7657,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
-        "before": [
-          "구라터끼",
-          "",
-          "W",
-          "W",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "이바닥남바완",
-          "",
-          "W",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "4 (50%)",
-          "4번만 가능"
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "몇잎",
-          "W",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          "0607 길갑"
-        ]
-      },
-      {
-        "status": null,
+        "status": "red",
         "before": [
           "힘줄절단",
           "L",
@@ -7674,58 +7674,7 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
-        "before": [
-          "쳀시",
-          "",
-          "L",
-          "L",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "6 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "흐흉(쿠노예)",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "5 (20%)",
-          "군대"
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "신호",
-          "",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "1 (0%)",
-          "3~4번 가능"
-        ]
-      },
-      {
-        "status": null,
+        "status": "red",
         "before": [
           "셰나",
           "",
@@ -7738,11 +7687,62 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "1 (0%)",
-          ""
+          "길탈"
         ]
       },
       {
-        "status": null,
+        "status": "yellow",
+        "before": [
+          "이바닥남바완",
+          "",
+          "W",
+          "",
+          "L",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "4 (50%)",
+          "4번만 가능"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "신호",
+          "",
+          "L",
+          "",
+          "W",
+          "",
+          "",
+          ""
+        ],
+        "after": [
+          "1 (0%)",
+          "3~4번 가능"
+        ]
+      },
+      {
+        "status": "yellow",
+        "before": [
+          "흐흉(쿠노예)",
+          "L",
+          "",
+          "",
+          "",
+          "L",
+          "",
+          ""
+        ],
+        "after": [
+          "5 (20%)",
+          "군대"
+        ]
+      },
+      {
+        "status": "yellow",
         "before": [
           "고유결",
           "",
@@ -7765,8 +7765,8 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "W",
-          "",
-          "",
+          "W",
+          "W",
           "",
           ""
         ],
@@ -7778,12 +7778,29 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
+          "연휴일",
+          "W",
+          "W",
+          "L",
+          "L",
+          "W",
+          "",
+          ""
+        ],
+        "after": [
+          "6 (33%)",
+          "명유"
+        ]
+      },
+      {
+        "status": "gray",
+        "before": [
           "사계",
           "L",
           "W",
           "L",
-          "",
-          "",
+          "L",
+          "W",
           "",
           ""
         ],
@@ -7795,17 +7812,17 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "연휴일",
-          "W",
-          "W",
+          "적류화",
           "L",
+          "",
+          "",
           "",
           "",
           "",
           ""
         ],
         "after": [
-          "6 (33%)",
+          "0 (0%)",
           "명유"
         ]
       },
@@ -7846,23 +7863,6 @@ window.WEEKLY_DATA = {
       {
         "status": "gray",
         "before": [
-          "적류화",
-          "L",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "after": [
-          "0 (0%)",
-          "명유"
-        ]
-      },
-      {
-        "status": "gray",
-        "before": [
           "자자",
           "",
           "",
@@ -7897,7 +7897,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "35 (49%)",
+      "total": "59 (49%)",
       "after": [
         "82 (46%)",
         ""
