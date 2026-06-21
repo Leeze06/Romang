@@ -7944,7 +7944,7 @@ window.WEEKLY_DATA = {
           "WW",
           "L",
           "LL",
-          ""
+          "WL"
         ],
         "after": [
           "6 (0%)",
@@ -7961,7 +7961,7 @@ window.WEEKLY_DATA = {
           "W",
           "L",
           "L",
-          ""
+          "W"
         ],
         "after": [
           "7 (29%)",
@@ -7978,7 +7978,7 @@ window.WEEKLY_DATA = {
           "",
           "W",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "5 (20%)",
@@ -7995,7 +7995,7 @@ window.WEEKLY_DATA = {
           "W",
           "W",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "0 (0%)",
@@ -8003,7 +8003,41 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "green",
+        "before": [
+          "별모알(앵무관찰자)",
+          "L",
+          "W",
+          "",
+          "L",
+          "L",
+          "",
+          "L"
+        ],
+        "after": [
+          "7 (57%)",
+          ""
+        ]
+      },
+      {
+        "status": "green",
+        "before": [
+          "분수",
+          "",
+          "",
+          "L",
+          "L",
+          "L",
+          "W",
+          "L"
+        ],
+        "after": [
+          "0 (0%)",
+          ""
+        ]
+      },
+      {
+        "status": "red",
         "before": [
           "네리으",
           "L",
@@ -8020,41 +8054,24 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
-          "별모알(앵무관찰자)",
-          "L",
+          "신호",
           "W",
           "",
           "L",
+          "",
           "L",
           "",
-          ""
+          "L"
         ],
         "after": [
-          "7 (57%)",
-          ""
+          "3 (33%)",
+          "3~4번 가능"
         ]
       },
       {
-        "status": null,
-        "before": [
-          "분수",
-          "",
-          "",
-          "L",
-          "L",
-          "L",
-          "W",
-          ""
-        ],
-        "after": [
-          "0 (0%)",
-          ""
-        ]
-      },
-      {
-        "status": null,
+        "status": "red",
         "before": [
           "몇잎",
           "W",
@@ -8067,28 +8084,11 @@ window.WEEKLY_DATA = {
         ],
         "after": [
           "5 (80%)",
-          "0607 길갑"
-        ]
-      },
-      {
-        "status": null,
-        "before": [
-          "이바닥남바완",
-          "",
-          "L",
-          "",
-          "W",
-          "",
-          "W",
           ""
-        ],
-        "after": [
-          "4 (50%)",
-          "4번만 가능"
         ]
       },
       {
-        "status": null,
+        "status": "red",
         "before": [
           "센만경",
           "L",
@@ -8105,24 +8105,24 @@ window.WEEKLY_DATA = {
         ]
       },
       {
-        "status": null,
+        "status": "yellow",
         "before": [
-          "신호",
+          "이바닥남바완",
+          "",
+          "L",
+          "",
           "W",
           "",
-          "L",
-          "",
-          "L",
-          "",
-          ""
+          "W",
+          "L"
         ],
         "after": [
-          "3 (33%)",
-          "3~4번 가능"
+          "4 (50%)",
+          "4번만 가능"
         ]
       },
       {
-        "status": null,
+        "status": "yellow",
         "before": [
           "흐흉(쿠노예)",
           "",
@@ -8131,7 +8131,7 @@ window.WEEKLY_DATA = {
           "L",
           "",
           "W",
-          ""
+          "W"
         ],
         "after": [
           "4 (25%)",
@@ -8182,7 +8182,7 @@ window.WEEKLY_DATA = {
           "W",
           "W",
           "W",
-          ""
+          "L"
         ],
         "after": [
           "7 (86%)",
@@ -8199,7 +8199,7 @@ window.WEEKLY_DATA = {
           "L",
           "W",
           "L",
-          ""
+          "L"
         ],
         "after": [
           "8 (38%)",
@@ -8311,7 +8311,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "72 (49%)",
+      "total": "84 (45%)",
       "after": [
         "82 (46%)",
         ""
