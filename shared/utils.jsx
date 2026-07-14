@@ -5,6 +5,22 @@
   const DATA = window.WEEKLY_DATA || {};
   const WEEK_NAMES = Object.keys(DATA);
 
+  // ---- Seasons -----------------------------------------------------------
+  // 시즌 17: '1월 3주차' ~ '6월 4주차'.  시즌 18: '7월 3주차' 부터.
+  const SEASON_BOUNDARY = '7월 3주차'; // 18시즌 첫 주차
+  function seasonOf(weekName) {
+    const i = WEEK_NAMES.indexOf(weekName);
+    const b = WEEK_NAMES.indexOf(SEASON_BOUNDARY);
+    return (b >= 0 && i >= b) ? 'S18' : 'S17';
+  }
+  // S18 먼저(기본), S17 다음.
+  const SEASONS = [
+    { id: 'S18', label: 'S18', full: '시즌 18', weeks: WEEK_NAMES.filter((w) => seasonOf(w) === 'S18') },
+    { id: 'S17', label: 'S17', full: '시즌 17', weeks: WEEK_NAMES.filter((w) => seasonOf(w) === 'S17') },
+  ].filter((s) => s.weeks.length > 0);
+  const DEFAULT_SEASON = SEASONS[0] ? SEASONS[0].id : 'S18';
+  function seasonWeeks(id) { const s = SEASONS.find((x) => x.id === id); return s ? s.weeks : WEEK_NAMES; }
+
   // Status priority: green > yellow > red > gray (for "best status this week" rollups)
   const STATUS_RANK = { green: 3, yellow: 2, red: 1, gray: 0, null: 0 };
 
@@ -70,13 +86,15 @@
     }
   }
 
-  // Cumulative per-player stats across all weeks
-  function buildPlayerIndex() {
+  // Cumulative per-player stats across a set of weeks (defaults to all).
+  // Pass a season's week list to compute season-scoped rankings.
+  function buildPlayerIndex(weekNames) {
+    const names = (weekNames && weekNames.length) ? weekNames : WEEK_NAMES;
     const index = {}; // nick -> { weeks: [{weekName, status, ...stats}], totals: {...} }
-    const latestWeekName = WEEK_NAMES[WEEK_NAMES.length - 1];
+    const latestWeekName = names[names.length - 1];
     const latestNicks = new Set((DATA[latestWeekName]?.rows || []).map((r) => r.before[0]));
 
-    WEEK_NAMES.forEach((weekName) => {
+    names.forEach((weekName) => {
       const week = DATA[weekName];
       week.rows.forEach((row) => {
         const nick = row.before[0];
@@ -153,20 +171,21 @@
   }
 
   // ---- Event scoring -----------------------------------------------------
-  // "6월 길랭 승점 이벤트": 6/8 ~ 6/21, 2주.
+  // "S18 길랭 승점 이벤트": 7/13 ~ 8/3, 3주.
   // 승 2점 · 패 1점. 주 최대 7판까지만 적립, 초과 시 승리 우선.
   //   ex) 한 주 10판(7승 3패) → 7승만 적립 = 14점
   const EVENT = {
-    title: '6월 길랭 승점 이벤트',
-    period: '6월 8일 ~ 6월 21일',
-    start: { month: 6, day: 8 },
-    end: { month: 6, day: 21 },
+    title: 'S18 길랭 승점 이벤트',
+    period: '7월 13일 ~ 8월 3일',
+    start: { month: 7, day: 13 },
+    end: { month: 8, day: 3 },
     weeklyCap: 7,
     winPts: 2,
     lossPts: 1,
     weeks: [
-      { label: '1주차', range: '6/8–6/14', start: { month: 6, day: 8 }, end: { month: 6, day: 14 } },
-      { label: '2주차', range: '6/15–6/21', start: { month: 6, day: 15 }, end: { month: 6, day: 21 } },
+      { label: '1주차', range: '7/13–7/19', start: { month: 7, day: 13 }, end: { month: 7, day: 19 } },
+      { label: '2주차', range: '7/20–7/26', start: { month: 7, day: 20 }, end: { month: 7, day: 26 } },
+      { label: '3주차', range: '7/27–8/3', start: { month: 7, day: 27 }, end: { month: 8, day: 3 } },
     ],
     prizes: [
       { rank: 1, medal: '🥇', label: '치킨 기프티콘' },
@@ -183,7 +202,9 @@
   function dateOrd(month, day) { return month * 100 + day; }
 
   // Returns per-player event scores, sorted (excludes players who left).
-  function buildEventScores() {
+  //   asOfOrd: when given, only counts plays dated on/before this ordinal
+  //            (used for the staged 6/14 → 6/21 reveals).
+  function buildEventScores(asOfOrd) {
     const playerIndex = buildPlayerIndex();
     const cap = EVENT.weeklyCap;
     const acc = {}; // nick -> { nick, weeks: [{wins,losses}, ...] }
@@ -200,6 +221,7 @@
         const date = parseDayCol(col);
         if (!date) return;
         const ord = dateOrd(date.month, date.day);
+        if (asOfOrd != null && ord > asOfOrd) return; // not yet revealed
         const ewi = EVENT.weeks.findIndex((w) =>
           ord >= dateOrd(w.start.month, w.start.day) && ord <= dateOrd(w.end.month, w.end.day));
         if (ewi < 0) return; // outside event window
@@ -243,10 +265,75 @@
     return results;
   }
 
+  // ---- Staged reveal -----------------------------------------------------
+  // The scoreboard is NOT shown live. It is revealed in two snapshots so a
+  // bad early run doesn't kill motivation:
+  //   stage 0 = 대기중 (집계 전)
+  //   stage 1 = 1주차(6/14)까지의 데이터로 산정한 점수판 — 6/14~6/20 동안 고정
+  //   stage 2 = 6/21까지의 데이터로 산정한 최종 점수판
+  // A stage unlocks only when BOTH: today has reached that week's end date,
+  // AND that week's 길랭표 데이터가 실제로 집계(입력)되어 있을 때.
+  function todayOrd() {
+    const d = new Date();
+    return dateOrd(d.getMonth() + 1, d.getDate());
+  }
+
+  // Any recorded play within [w.start, w.end]?  (= 해당 주차 데이터가 들어왔는가)
+  function weekHasData(w) {
+    const s = dateOrd(w.start.month, w.start.day);
+    const e = dateOrd(w.end.month, w.end.day);
+    return WEEK_NAMES.some((wn) => {
+      const week = DATA[wn];
+      if (week.mode !== 'wl') return false;
+      const { dayCols } = weekShape(week);
+      return dayCols.some((col, di) => {
+        const date = parseDayCol(col);
+        if (!date) return false;
+        const ord = dateOrd(date.month, date.day);
+        if (ord < s || ord > e) return false;
+        return week.rows.some((r) => parseWL(r.before[1 + di]).plays > 0);
+      });
+    });
+  }
+
+  function eventStage() {
+    // manual override for preview/QA:  event.html?eventStage=0|1|2
+    try {
+      const q = new URLSearchParams(location.search).get('eventStage');
+      if (q != null && q !== '') return Math.max(0, Math.min(EVENT.weeks.length, parseInt(q, 10) || 0));
+    } catch (e) { /* no location */ }
+    const today = todayOrd();
+    let stage = 0;
+    EVENT.weeks.forEach((w, i) => {
+      const endOrd = dateOrd(w.end.month, w.end.day);
+      if (today >= endOrd && weekHasData(w)) stage = i + 1;
+    });
+    return stage;
+  }
+
+  // One call for the page: returns the active snapshot.
+  function eventBoard() {
+    const stage = eventStage();
+    if (stage === 0) return { stage: 0, scores: [], final: false, asOfLabel: null, visibleWeeks: 0 };
+    const w = EVENT.weeks[stage - 1];
+    const cutoffOrd = dateOrd(w.end.month, w.end.day);
+    return {
+      stage,
+      scores: buildEventScores(cutoffOrd),
+      final: stage === EVENT.weeks.length,
+      asOfLabel: `${w.end.month}/${w.end.day}`,
+      visibleWeeks: stage,
+    };
+  }
+
   window.RomangData = {
     DATA,
     WEEK_NAMES,
     LATEST: WEEK_NAMES[WEEK_NAMES.length - 1],
+    SEASONS,
+    DEFAULT_SEASON,
+    seasonOf,
+    seasonWeeks,
     parseWL,
     parseCount,
     weekShape,
@@ -261,5 +348,7 @@
     EVENT,
     parseDayCol,
     buildEventScores,
+    eventStage,
+    eventBoard,
   };
 })();

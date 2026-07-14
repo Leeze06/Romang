@@ -12,25 +12,30 @@
     const mobile = size === 'mobile';
     const compact = size !== 'desktop';
 
-    const playerIndex = useMemo(() => RD.buildPlayerIndex(), []);
+    const [season, setSeason] = useState(RD.DEFAULT_SEASON);
+    const seasonWeeks = RD.seasonWeeks(season);
+    const minPlays = seasonWeeks.length <= 3 ? 3 : 14;
+
+    const playerIndex = useMemo(() => RD.buildPlayerIndex(seasonWeeks), [season]);
     const active = useMemo(() => Object.values(playerIndex).filter((p) => !p.left), [playerIndex]);
     const leftCount = useMemo(() => Object.values(playerIndex).filter((p) => p.left).length, [playerIndex]);
 
     const winrate = useMemo(() => active
-      .filter((p) => (p.totals.wins + p.totals.losses) >= 14)
+      .filter((p) => (p.totals.wins + p.totals.losses) >= minPlays)
       .sort((a, b) => (b.totals.winRate ?? -1) - (a.totals.winRate ?? -1) || (b.totals.wins + b.totals.losses) - (a.totals.wins + a.totals.losses))
-      .slice(0, 20), [active]);
+      .slice(0, 20), [active, minPlays]);
 
     return (
       <S.PageShell
         current="ranking" size={size}
         title="랭킹"
-        subtitle={`전체 ${RD.WEEK_NAMES.length}주 누적`}
+        subtitle={`${season} 누적 승률 · ${seasonWeeks.length}주 기록`}
+        right={<S.SeasonToggle season={season} setSeason={setSeason} size={size} />}
       >
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
           <Board
-            title="누적 승률 TOP"
-            hint="14판 이상"
+            title={`${season} 누적 승률 TOP`}
+            hint={`${minPlays}판 이상 · 현역만`}
             metricLabel="승률"
             rows={winrate}
             render={(p) => ({
@@ -39,13 +44,14 @@
               bar: (p.totals.winRate || 0) / 100,
             })}
             size={size}
+            emptyNote={seasonWeeks.length <= 3 ? `${season}은 아직 집계 초기입니다. 길랭 기록이 쌓이면 순위가 채워집니다.` : null}
           />
         </div>
       </S.PageShell>
     );
   }
 
-  function Board({ title, hint, metricLabel, rows, render, size }) {
+  function Board({ title, hint, metricLabel, rows, render, size, emptyNote }) {
     const mobile = size === 'mobile';
     const top3 = rows.slice(0, 3);
     const rest = rows.slice(3);
@@ -117,7 +123,7 @@
             );
           })}
           {rows.length === 0 && (
-            <div style={{ padding: 24, textAlign: 'center', color: palette.dim, fontSize: 12 }}>표시할 데이터가 없습니다.</div>
+            <div style={{ padding: 24, textAlign: 'center', color: palette.dim, fontSize: 12, lineHeight: 1.6 }}>{emptyNote || '표시할 데이터가 없습니다.'}</div>
           )}
         </div>
 

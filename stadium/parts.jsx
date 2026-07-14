@@ -27,12 +27,15 @@
     );
   }
 
-  function WeekSelector({ weekName, setWeekName, size }) {
+  function WeekSelector({ weekName, setWeekName, size, weeks }) {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
     const mobile = size === 'mobile';
-    const idx = RD.weekIndex(weekName);
-    const isLatest = idx === RD.WEEK_NAMES.length - 1;
+    const list = (weeks && weeks.length) ? weeks : RD.WEEK_NAMES;
+    const idx = list.indexOf(weekName);
+    const isLatest = weekName === RD.LATEST;
+    const prevW = idx > 0 ? list[idx - 1] : null;
+    const nextW = (idx >= 0 && idx < list.length - 1) ? list[idx + 1] : null;
 
     useEffect(() => {
       if (!open) return;
@@ -61,8 +64,8 @@
         </button>
         {!mobile && (
           <>
-            <button onClick={() => { const p = RD.prevWeek(weekName); if (p) setWeekName(p); }} style={navBtn()} aria-label="prev week">‹</button>
-            <button onClick={() => { const n = RD.nextWeek(weekName); if (n) setWeekName(n); }} style={navBtn()} aria-label="next week">›</button>
+            <button onClick={() => { if (prevW) setWeekName(prevW); }} style={navBtn()} aria-label="prev week">‹</button>
+            <button onClick={() => { if (nextW) setWeekName(nextW); }} style={navBtn()} aria-label="next week">›</button>
           </>
         )}
         {open && (
@@ -74,7 +77,7 @@
             minWidth: 180,
             boxShadow: '0 12px 30px rgba(0,0,0,0.5)',
           }}>
-            {RD.WEEK_NAMES.slice().reverse().map((w) => (
+            {list.slice().reverse().map((w) => (
               <div key={w} onClick={() => { setWeekName(w); setOpen(false); }} style={{
                 padding: '8px 12px', fontSize: 13, borderRadius: 5,
                 color: w === weekName ? palette.cyan : palette.text,
@@ -462,5 +465,39 @@
     );
   }
 
-  Object.assign(window.Stadium, { StatCard, WeekSelector, Table, Sidebar });
+  // ---- Season Toggle -----------------------------------------------------
+
+  function SeasonToggle({ season, setSeason, size }) {
+    const mobile = size === 'mobile';
+    const seasons = RD.SEASONS;
+    if (!seasons || seasons.length < 2) return null;
+    return (
+      <div style={{
+        display: 'inline-flex', alignItems: 'center', gap: 3, flexShrink: 0,
+        padding: 3, borderRadius: 10,
+        background: palette.panel, border: `1px solid ${palette.line2}`,
+      }}>
+        {seasons.map((s) => {
+          const on = s.id === season;
+          return (
+            <button key={s.id} onClick={() => setSeason(s.id)} style={{
+              display: 'inline-flex', alignItems: 'baseline', gap: 5,
+              padding: mobile ? '6px 12px' : '7px 15px',
+              borderRadius: 7, border: 'none', cursor: 'pointer',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: mobile ? 13 : 14, fontWeight: 800, letterSpacing: 0.5,
+              background: on ? `linear-gradient(135deg, ${palette.cyan}, ${palette.green})` : 'transparent',
+              color: on ? '#06121f' : palette.dim,
+              transition: 'background .15s, color .15s',
+            }}>
+              {s.label}
+              <span style={{ fontSize: 9, fontWeight: 700, fontFamily: 'Pretendard Variable, sans-serif', opacity: on ? 0.7 : 0.6 }}>{s.weeks.length}주</span>
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
+  Object.assign(window.Stadium, { StatCard, WeekSelector, SeasonToggle, Table, Sidebar });
 })();

@@ -12,8 +12,17 @@
     const mobile = size === 'mobile';
     const tablet = size === 'tablet';
 
-    const [weekName, setWeekName] = useState(RD.LATEST);
+    const [season, setSeason] = useState(RD.DEFAULT_SEASON);
+    const seasonWeeks = RD.seasonWeeks(season);
+    const [weekName, setWeekName] = useState(seasonWeeks[seasonWeeks.length - 1]);
     const [selectedNick, setSelectedNick] = useState(null);
+
+    // When season changes, jump to that season's latest week.
+    const onSeason = useCallback((id) => {
+      setSeason(id);
+      const ws = RD.seasonWeeks(id);
+      setWeekName(ws[ws.length - 1]);
+    }, []);
 
     const week = RD.DATA[weekName];
     const shape = RD.weekShape(week);
@@ -43,7 +52,12 @@
         current="guild" size={size}
         title="길랭표"
         subtitle={`주차별 길드전 기록 · 닉네임을 누르면 개인 전적이 열립니다`}
-        right={<S.WeekSelector weekName={weekName} setWeekName={setWeekName} size={size} />}
+        right={
+          <div style={{ display: 'flex', alignItems: 'center', gap: mobile ? 8 : 10, flexWrap: 'wrap', justifyContent: mobile ? 'flex-start' : 'flex-end' }}>
+            <S.SeasonToggle season={season} setSeason={onSeason} size={size} />
+            <S.WeekSelector weekName={weekName} setWeekName={setWeekName} size={size} weeks={seasonWeeks} />
+          </div>
+        }
       >
         <div style={{
           display: 'grid',

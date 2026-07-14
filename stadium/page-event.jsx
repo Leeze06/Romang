@@ -1,5 +1,5 @@
-// Page · 이벤트 — 6월 길랭 승점 이벤트 안내 + 실시간 점수판.
-// 점수는 길랭표 데이터에서 이벤트 기간(6/8~6/21) 날짜만 골라 자동 집계.
+// Page · 이벤트 — S18 길랭 승점 이벤트 안내 + 점수판.
+// 점수는 길랭표 데이터에서 이벤트 기간(7/13~8/3) 날짜만 골라 자동 집계.
 
 (function () {
   const { useMemo } = React;
@@ -7,20 +7,20 @@
   const S = window.Stadium;
   const { palette } = S;
   const EVENT = RD.EVENT;
+  const REVEAL_LABELS = EVENT.weeks.map((w) => `${w.end.month}/${w.end.day}`);
 
   function EventPage() {
     const size = S.useResponsive();
     const mobile = size === 'mobile';
     const compact = size !== 'desktop';
 
-    const scores = useMemo(() => RD.buildEventScores(), []);
-    const hasData = scores.length > 0;
+    const board = useMemo(() => RD.eventBoard(), []);
 
     return (
       <S.PageShell
         current="event" size={size}
         title={EVENT.title}
-        subtitle={`${EVENT.period} · 2주간 · 승 ${EVENT.winPts}점 / 패 ${EVENT.lossPts}점`}
+        subtitle={`${EVENT.period} · ${EVENT.weeks.length}주간 · 승 ${EVENT.winPts}점 / 패 ${EVENT.lossPts}점`}
       >
         <div style={{
           display: 'grid',
@@ -29,7 +29,7 @@
           alignItems: 'start',
         }}>
           <RulesPanel mobile={mobile} />
-          <ScoreBoard scores={scores} hasData={hasData} size={size} />
+          <ScoreBoard board={board} size={size} />
         </div>
       </S.PageShell>
     );
@@ -46,7 +46,7 @@
           </div>
           <div style={{ padding: '6px 18px 14px' }}>
             <Rule n="1" title="기간">
-              {EVENT.period} (오늘 ~ 일요일), 2주간 진행합니다.
+              {EVENT.period} (오늘 ~ 일요일), {EVENT.weeks.length}주간 진행합니다. 이전과 규칙은 같지만 기간이 늘어났어요.
             </Rule>
             <Rule n="2" title="승점제">
               길랭 <Em color={palette.red}>패 1점</Em> · <Em color={palette.green}>승 2점</Em>. 종료 후 총점
@@ -77,11 +77,19 @@
                 <span style={{ fontSize: 14, fontWeight: 600, color: palette.text }}>{p.label}</span>
               </div>
             ))}
+            <div style={{
+              margin: '4px 4px 2px', padding: '10px 12px', borderRadius: 10,
+              background: 'linear-gradient(90deg, rgba(90,217,255,0.10), rgba(34,211,154,0.08))',
+              border: `1px solid ${palette.line2}`,
+              fontSize: 11.5, color: palette.dim, lineHeight: 1.55,
+            }}>
+              수상자가 원하면 <b style={{ color: palette.text }}>동일 금액대의 다른 상품</b>으로 변경 가능해요. (예: 베라 파인트 등)
+            </div>
           </div>
         </div>
 
         <div style={{ fontSize: 11, color: palette.label, lineHeight: 1.6, padding: '0 4px' }}>
-          ※ 주 7일 길랭 · 5승 깜엽 지급은 별도로 계속 진행됩니다. 많은 참여 바랍니다.
+          ※ 주 7일 길랭 · 5승 깜엽 지급은 별도로 계속 진행됩니다. 많이 지더라도 판수박치기로 2등 한 사례도 있었으니 길랭 많이 참여해 주세요!
         </div>
       </div>
     );
@@ -113,19 +121,30 @@
 
   // ---- Scoreboard --------------------------------------------------------
 
-  function ScoreBoard({ scores, hasData, size }) {
+  function ScoreBoard({ board, size }) {
     const mobile = size === 'mobile';
+    const { stage, scores, final, asOfLabel, visibleWeeks } = board;
+    const hasData = stage > 0;
     return (
       <div style={{ background: palette.panel, border: `1px solid ${palette.line}`, borderRadius: 14, overflow: 'hidden' }}>
         <div style={{ padding: mobile ? '14px 16px' : '16px 20px', borderBottom: `1px solid ${palette.line}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, color: palette.text, fontFamily: 'Pretendard Variable, sans-serif' }}>실시간 점수판</span>
-            {hasData && <span style={{ fontSize: 10, padding: '2px 8px', borderRadius: 4, background: palette.greenSoft, color: palette.green, border: `1px solid ${palette.greenLine}`, fontWeight: 700, letterSpacing: 1 }}>LIVE</span>}
+            <span style={{ fontSize: mobile ? 15 : 17, fontWeight: 700, color: palette.text, fontFamily: 'Pretendard Variable, sans-serif' }}>점수판</span>
+            {hasData && (
+              <span style={{
+                fontSize: 10, padding: '2px 8px', borderRadius: 4, fontWeight: 700, letterSpacing: 1,
+                background: final ? palette.cyanDim : palette.greenSoft,
+                color: final ? palette.cyan : palette.green,
+                border: `1px solid ${final ? palette.line2 : palette.greenLine}`,
+              }}>{final ? '최종 확정' : '1차 집계'}</span>
+            )}
           </div>
-          <div style={{ fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>{hasData ? `${scores.length}명 참여` : '집계 대기'}</div>
+          <div style={{ fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>
+            {hasData ? `${asOfLabel} 기준 · ${scores.length}명` : '집계 대기'}
+          </div>
         </div>
 
-        {!hasData ? <EmptyState mobile={mobile} /> : <ScoreList scores={scores} size={size} />}
+        {!hasData ? <EmptyState mobile={mobile} /> : <ScoreList scores={scores} visibleWeeks={visibleWeeks} final={final} size={size} />}
       </div>
     );
   }
@@ -139,10 +158,11 @@
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: 24, color: palette.dim,
         }}>⏱</div>
-        <div style={{ fontSize: 15, fontWeight: 700, color: palette.text, marginBottom: 6 }}>이벤트 집계 대기 중</div>
-        <div style={{ fontSize: 12.5, color: palette.dim, lineHeight: 1.6, maxWidth: 360, margin: '0 auto' }}>
-          {RD.EVENT.period} 사이의 길랭표 기록이 입력되면
-          <br />각자의 승점이 여기에 자동으로 순위별로 표시됩니다.
+        <div style={{ fontSize: 15, fontWeight: 700, color: palette.text, marginBottom: 6 }}>점수판 공개 대기 중</div>
+        <div style={{ fontSize: 12.5, color: palette.dim, lineHeight: 1.6, maxWidth: 400, margin: '0 auto' }}>
+          점수판은 각 주차가 끝날 때마다 공개됩니다.
+          <br /><b style={{ color: palette.text }}>{REVEAL_LABELS[0]}</b> · <b style={{ color: palette.text }}>{REVEAL_LABELS[1]}</b> 집계가 끝나면 중간 순위가,
+          <br /><b style={{ color: palette.text }}>{REVEAL_LABELS[REVEAL_LABELS.length - 1]}</b> 전체 집계가 끝나면 최종 순위가 공개돼요.
         </div>
         <div style={{ marginTop: 18, display: 'inline-flex', gap: 6, padding: '8px 14px', borderRadius: 8, background: palette.bg, border: `1px solid ${palette.line2}`, fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>
           승 {RD.EVENT.winPts}점 · 패 {RD.EVENT.lossPts}점 · 주 최대 {RD.EVENT.weeklyCap}판
@@ -151,16 +171,22 @@
     );
   }
 
-  function ScoreList({ scores, size }) {
+  function ScoreList({ scores, visibleWeeks, final, size }) {
     const mobile = size === 'mobile';
     const maxScore = Math.max(...scores.map((s) => s.total), 1);
+    const weeks = EVENT.weeks.slice(0, visibleWeeks);
     return (
       <div style={{ padding: 6 }}>
+        {!final && (
+          <div style={{ margin: '6px 8px 2px', padding: '8px 12px', borderRadius: 8, background: palette.cyanDim, border: `1px solid ${palette.line2}`, fontSize: 11.5, color: palette.dim, lineHeight: 1.5 }}>
+            현재 <b style={{ color: palette.text }}>{REVEAL_LABELS[visibleWeeks - 1]}</b> 기준 중간 순위입니다. 남은 주차 결과가 반영된 <b style={{ color: palette.text }}>최종 순위는 {REVEAL_LABELS[REVEAL_LABELS.length - 1]}</b>에 공개됩니다.
+          </div>
+        )}
         {/* column header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '6px 14px', fontSize: 10, color: palette.label, textTransform: 'uppercase', letterSpacing: 1 }}>
           <span style={{ width: 28, textAlign: 'center', flexShrink: 0 }}>#</span>
           <span style={{ flex: 1 }}>플레이어</span>
-          {!mobile && EVENT.weeks.map((w) => (
+          {!mobile && weeks.map((w) => (
             <span key={w.label} style={{ width: 70, textAlign: 'center', flexShrink: 0 }}>{w.label}</span>
           ))}
           <span style={{ width: mobile ? 60 : 90, textAlign: 'right', flexShrink: 0 }}>총점</span>
@@ -194,7 +220,7 @@
                 </div>
               </div>
 
-              {!mobile && p.weeks.map((w, i) => (
+              {!mobile && p.weeks.slice(0, visibleWeeks).map((w, i) => (
                 <div key={i} style={{ width: 70, textAlign: 'center', flexShrink: 0 }}>
                   {w.plays > 0 ? (
                     <div>
