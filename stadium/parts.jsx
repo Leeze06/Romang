@@ -75,7 +75,7 @@
             borderRadius: 8, padding: 4, zIndex: 30,
             maxHeight: 320, overflowY: 'auto',
             minWidth: 180,
-            boxShadow: '0 12px 30px rgba(0,0,0,0.5)',
+            boxShadow: '0 12px 30px rgba(18,33,63,0.16)',
           }}>
             {list.slice().reverse().map((w) => (
               <div key={w} onClick={() => { setWeekName(w); setOpen(false); }} style={{
@@ -486,8 +486,8 @@
               borderRadius: 7, border: 'none', cursor: 'pointer',
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: mobile ? 13 : 14, fontWeight: 800, letterSpacing: 0.5,
-              background: on ? `linear-gradient(135deg, ${palette.cyan}, ${palette.green})` : 'transparent',
-              color: on ? '#06121f' : palette.dim,
+              background: on ? palette.navy : 'transparent',
+              color: on ? palette.goldSoft : palette.dim,
               transition: 'background .15s, color .15s',
             }}>
               {s.label}

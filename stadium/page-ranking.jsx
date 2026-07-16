@@ -28,14 +28,14 @@
     return (
       <S.PageShell
         current="ranking" size={size}
-        title="랭킹"
-        subtitle={`${season} 누적 승률 · ${seasonWeeks.length}주 기록`}
+        title={`${season === 'S17' ? '17' : '18'}시즌 승률 순위`}
+        subtitle={null}
         right={<S.SeasonToggle season={season} setSeason={setSeason} size={size} />}
       >
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
           <Board
-            title={`${season} 누적 승률 TOP`}
-            hint={`${minPlays}판 이상 · 현역만`}
+            title={`${season} 누적 승률 랭킹`}
+            hint={null}
             metricLabel="승률"
             rows={winrate}
             render={(p) => ({

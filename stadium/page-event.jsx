@@ -20,7 +20,7 @@
       <S.PageShell
         current="event" size={size}
         title={EVENT.title}
-        subtitle={`${EVENT.period} · ${EVENT.weeks.length}주간 · 승 ${EVENT.winPts}점 / 패 ${EVENT.lossPts}점`}
+        subtitle={<>{EVENT.period}, {EVENT.weeks.length}주간 진행<br />승리 시: {EVENT.winPts}점 / 패배 시: {EVENT.lossPts}점</>}
       >
         <div style={{
           display: 'grid',
@@ -46,11 +46,11 @@
           </div>
           <div style={{ padding: '6px 18px 14px' }}>
             <Rule n="1" title="기간">
-              {EVENT.period} (오늘 ~ 일요일), {EVENT.weeks.length}주간 진행합니다. 이전과 규칙은 같지만 기간이 늘어났어요.
+              {EVENT.period} (오늘 ~ 일요일), {EVENT.weeks.length}주간 진행합니다. 이전과 규칙은 같지만 기간을 늘려서 진행합니다.
             </Rule>
             <Rule n="2" title="승점제">
-              길랭 <Em color={palette.red}>패 1점</Em> · <Em color={palette.green}>승 2점</Em>. 종료 후 총점
-              <Em color={palette.cyan}> 1·2·3등</Em>에게 상품을 드립니다.
+              길랭 <Em color={palette.red}>패배 시 1점,</Em> <Em color={palette.green}>승리 시 2점</Em>. 종료 후 총점
+              <Em color={palette.cyan}> 1·2·3등</Em>에게 순위에 따라 상품을 드립니다.
             </Rule>
             <Rule n="3" title="주간 적립 한도" last>
               점수는 <Em color={palette.text}>주 최대 7판</Em>까지 적립됩니다. 그 이상 돌릴 경우
@@ -79,7 +79,7 @@
             ))}
             <div style={{
               margin: '4px 4px 2px', padding: '10px 12px', borderRadius: 10,
-              background: 'linear-gradient(90deg, rgba(90,217,255,0.10), rgba(34,211,154,0.08))',
+              background: 'linear-gradient(90deg, rgba(28,58,110,0.08), rgba(217,178,90,0.10))',
               border: `1px solid ${palette.line2}`,
               fontSize: 11.5, color: palette.dim, lineHeight: 1.55,
             }}>
@@ -140,7 +140,7 @@
             )}
           </div>
           <div style={{ fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>
-            {hasData ? `${asOfLabel} 기준 · ${scores.length}명` : '집계 대기'}
+            {hasData ? `${asOfLabel} 기준 · ${scores.length}명` : '집계 중'}
           </div>
         </div>
 
@@ -161,11 +161,8 @@
         <div style={{ fontSize: 15, fontWeight: 700, color: palette.text, marginBottom: 6 }}>점수판 공개 대기 중</div>
         <div style={{ fontSize: 12.5, color: palette.dim, lineHeight: 1.6, maxWidth: 400, margin: '0 auto' }}>
           점수판은 각 주차가 끝날 때마다 공개됩니다.
-          <br /><b style={{ color: palette.text }}>{REVEAL_LABELS[0]}</b> · <b style={{ color: palette.text }}>{REVEAL_LABELS[1]}</b> 집계가 끝나면 중간 순위가,
+          <br /><b style={{ color: palette.text }}>{REVEAL_LABELS[0]},</b> <b style={{ color: palette.text }}>{REVEAL_LABELS[1]}</b> 집계가 끝나면 중간 순위가,
           <br /><b style={{ color: palette.text }}>{REVEAL_LABELS[REVEAL_LABELS.length - 1]}</b> 전체 집계가 끝나면 최종 순위가 공개돼요.
-        </div>
-        <div style={{ marginTop: 18, display: 'inline-flex', gap: 6, padding: '8px 14px', borderRadius: 8, background: palette.bg, border: `1px solid ${palette.line2}`, fontSize: 11, color: palette.label, fontFamily: 'JetBrains Mono, monospace' }}>
-          승 {RD.EVENT.winPts}점 · 패 {RD.EVENT.lossPts}점 · 주 최대 {RD.EVENT.weeklyCap}판
         </div>
       </div>
     );

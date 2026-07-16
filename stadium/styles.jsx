@@ -3,28 +3,32 @@
 (function () {
   const { useState, useEffect } = React;
 
+  // 시안 C · 웜 크림 + 다크 네이비 히어로. 브랜드 골드/네이비 액센트.
   const palette = {
-    bg: '#0a1220',
-    panel: '#0f1a2e',
-    panel2: '#13243d',
-    line: 'rgba(120, 180, 255, 0.08)',
-    line2: 'rgba(120, 180, 255, 0.16)',
-    text: '#dbe8ff',
-    dim: '#7a8bad',
-    label: '#5e7194',
-    green: '#22d39a',
-    greenSoft: 'rgba(34,211,154,0.12)',
-    greenLine: 'rgba(34,211,154,0.45)',
-    red: '#ff5b7a',
-    redSoft: 'rgba(255,91,122,0.10)',
-    redLine: 'rgba(255,91,122,0.45)',
-    yellow: '#f5c244',
-    yellowSoft: 'rgba(245,194,68,0.10)',
-    yellowLine: 'rgba(245,194,68,0.40)',
-    gray: '#5d6c87',
-    graySoft: 'rgba(93,108,135,0.08)',
-    cyan: '#5ad9ff',
-    cyanDim: 'rgba(90,217,255,0.18)',
+    bg: '#f4ebd8',        // warm cream page
+    panel: '#ffffff',     // white cards
+    panel2: '#f6efe0',    // warm raised / hover
+    line: '#e7ddc9',      // warm hairline
+    line2: '#d6cab0',     // warm strong hairline
+    text: '#181d26',      // ink
+    dim: '#5f6670',
+    label: '#9a917f',
+    green: '#0b7a4f',
+    greenSoft: 'rgba(11,122,79,0.10)',
+    greenLine: 'rgba(11,122,79,0.32)',
+    red: '#c0392b',
+    redSoft: 'rgba(192,57,43,0.09)',
+    redLine: 'rgba(192,57,43,0.32)',
+    yellow: '#b07d17',
+    yellowSoft: 'rgba(176,125,23,0.12)',
+    yellowLine: 'rgba(176,125,23,0.35)',
+    gray: '#8a8172',
+    graySoft: 'rgba(138,129,114,0.10)',
+    cyan: '#1c3a6e',      // brand navy (accent)
+    cyanDim: 'rgba(28,58,110,0.10)',
+    navy: '#12213f',
+    gold: '#d9b25a',
+    goldSoft: '#f2e2b6',
   };
 
   const statusColor = {

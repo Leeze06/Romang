@@ -85,7 +85,7 @@
             <Stat label="총 판수" value={t.plays} sub={wlTotal ? `${t.wins}W · ${t.losses}L` : '카운트 모드 포함'} accent={palette.cyan} />
             <Stat label="누적 승률" value={t.winRate != null ? `${t.winRate}%` : '—'} sub={wlTotal ? `${wlTotal}판 기준` : 'W/L 데이터 없음'} accent={t.winRate != null && t.winRate >= 50 ? palette.green : palette.red} />
             <Stat label="충족 주차" value={`${t.weeksGreen}/${t.weeksTotal}`} sub={`${greenRate}%`} accent={palette.green} />
-            <Stat label="상태 분포" value={<StatusDots t={t} />} sub={`녹 ${t.weeksGreen} · 노 ${t.weeksYellow} · 적 ${t.weeksRed} · 회 ${t.weeksGray}`} accent={palette.cyan} />
+            <Stat label="상태 분포" value={<StatusDots t={t} />} accent={palette.cyan} />
           </div>
 
           {/* Spark / streak strip */}
@@ -108,7 +108,7 @@
     return (
       <div onClick={onClose} style={{
         position: 'fixed', inset: 0, zIndex: 50,
-        background: 'rgba(4, 8, 16, 0.7)', backdropFilter: 'blur(8px)',
+        background: 'rgba(20,24,32,0.5)', backdropFilter: 'blur(8px)',
         display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
         animation: 'sd-fadein .2s ease',
       }}>
@@ -126,7 +126,7 @@
       <div onClick={(e) => e.stopPropagation()} style={{
         background: palette.bg,
         border: `1px solid ${palette.line2}`,
-        boxShadow: '0 -20px 60px rgba(0,0,0,0.5)',
+        boxShadow: '0 -20px 60px rgba(18,33,63,0.28)',
         width: mobile ? '100%' : 'min(820px, calc(100% - 32px))',
         maxHeight: mobile ? '92vh' : '88vh',
         borderRadius: mobile ? '16px 16px 0 0' : 12,

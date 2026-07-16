@@ -51,7 +51,7 @@
       <S.PageShell
         current="guild" size={size}
         title="길랭표"
-        subtitle={`주차별 길드전 기록 · 닉네임을 누르면 개인 전적이 열립니다`}
+        subtitle={<ul style={{ margin: 0, paddingLeft: 18 }}><li>주차별로 길랭 판수 기록</li><li>닉네임 눌러서 개인 전적만 확인 가능</li></ul>}
         right={
           <div style={{ display: 'flex', alignItems: 'center', gap: mobile ? 8 : 10, flexWrap: 'wrap', justifyContent: mobile ? 'flex-start' : 'flex-end' }}>
             <S.SeasonToggle season={season} setSeason={onSeason} size={size} />
@@ -104,9 +104,9 @@
           width: '100%', maxWidth: 360,
           background: P.panel, border: `1px solid ${P.line}`, borderRadius: 16,
           padding: '32px 26px', textAlign: 'center',
-          boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
+          boxShadow: '0 20px 50px rgba(18,33,63,0.14)',
         }}>
-          <img src="assets/romang-emblem.png" alt="Romang" style={{ height: 64, marginBottom: 14, filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.5))' }} />
+          <img src="assets/romang-emblem.png" alt="Romang" style={{ height: 64, marginBottom: 14, filter: 'drop-shadow(0 4px 12px rgba(18,33,63,0.28))' }} />
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, marginBottom: 6 }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={P.cyan} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <h1 style={{ margin: 0, fontSize: 19, fontWeight: 800, color: P.text, fontFamily: 'Pretendard Variable, sans-serif' }}>길랭표 잠금</h1>
@@ -136,8 +136,8 @@
           <button type="submit" disabled={busy || !pw} style={{
             marginTop: 18, width: '100%',
             padding: '12px 14px', borderRadius: 10, border: 'none',
-            background: (busy || !pw) ? 'rgba(90,217,255,0.25)' : `linear-gradient(135deg, ${P.cyan}, ${P.green})`,
-            color: '#06121f', fontSize: 15, fontWeight: 800, cursor: (busy || !pw) ? 'default' : 'pointer',
+            background: (busy || !pw) ? 'rgba(28,58,110,0.25)' : palette.navy,
+            color: palette.goldSoft, fontSize: 15, fontWeight: 800, cursor: (busy || !pw) ? 'default' : 'pointer',
             fontFamily: 'Pretendard Variable, sans-serif',
             transition: 'opacity .15s',
           }}>{busy ? '확인 중…' : '입장'}</button>

@@ -18,7 +18,7 @@
         style={{
           height: size, width: 'auto',
           display: 'block', objectFit: 'contain',
-          filter: 'drop-shadow(0 3px 8px rgba(0,0,0,0.5))',
+          filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.28))',
           flexShrink: 0,
         }}
       />
@@ -31,12 +31,12 @@
         display: 'inline-flex', alignItems: 'center', gap: 8,
         padding: mobile ? '9px 12px' : '10px 16px',
         borderRadius: 999, textDecoration: 'none',
-        background: palette.panel, border: `1px solid ${palette.line2}`,
-        color: palette.text, flexShrink: 0,
+        background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(242,226,182,0.28)',
+        color: palette.goldSoft, flexShrink: 0,
         transition: 'transform .15s ease, border-color .15s ease, background .15s ease',
       }}>
-        <style>{`.sd-homebtn:hover{transform:translateY(-1px);background:${palette.panel2 || '#13243d'};border-color:rgba(120,180,255,0.32);}`}</style>
-        <img src="assets/home-icon.png" alt="" style={{ width: 17, height: 17, display: 'block', opacity: 0.92 }} />
+        <style>{`.sd-homebtn:hover{transform:translateY(-1px);background:rgba(255,255,255,0.18);border-color:rgba(242,226,182,0.5);}`}</style>
+        <img src="assets/home-icon.png" alt="" style={{ width: 17, height: 17, display: 'block', opacity: 0.92, filter: 'brightness(0) invert(1)' }} />
         <span style={{ fontSize: mobile ? 13 : 14, fontWeight: 700, letterSpacing: 0.2 }}>홈</span>
       </a>
     );
@@ -48,13 +48,16 @@
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         gap: 12, marginBottom: mobile ? 16 : 24, flexWrap: 'wrap',
+        background: palette.navy, borderRadius: 14,
+        padding: mobile ? '12px 14px' : '14px 20px',
+        boxShadow: '0 10px 30px rgba(18,33,63,0.18)',
       }}>
         <a href="index.html" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <Emblem size={mobile ? 36 : 42} />
+          <Emblem size={mobile ? 34 : 40} />
           <span style={{
             fontFamily: 'Pretendard Variable, sans-serif',
             fontSize: mobile ? 17 : 20, fontWeight: 800, letterSpacing: 2.5,
-            color: palette.text,
+            color: palette.goldSoft,
           }}>ROMANG</span>
         </a>
         <HomeButton mobile={mobile} />
@@ -72,7 +75,6 @@
         color: palette.text,
         fontFamily: 'Pretendard Variable, "Apple SD Gothic Neo", sans-serif',
         padding: mobile ? 12 : tablet ? 18 : 24,
-        backgroundImage: `radial-gradient(circle at 20% 0%, rgba(90,217,255,0.06), transparent 50%), radial-gradient(circle at 90% 100%, rgba(34,211,154,0.05), transparent 50%)`,
         boxSizing: 'border-box',
       }}>
         <div style={{ maxWidth, margin: '0 auto' }}>
