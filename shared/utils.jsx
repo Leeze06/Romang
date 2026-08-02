@@ -171,21 +171,21 @@
   }
 
   // ---- Event scoring -----------------------------------------------------
-  // "S18 길랭 승점 이벤트": 7/13 ~ 8/3, 3주.
+  // "S18 길랭 승점 이벤트": 7/13 ~ 8/2, 3주.
   // 승 2점 · 패 1점. 주 최대 7판까지만 적립, 초과 시 승리 우선.
   //   ex) 한 주 10판(7승 3패) → 7승만 적립 = 14점
   const EVENT = {
-    title: 'S18 길랭 승점 이벤트',
-    period: '7월 13일 ~ 8월 3일',
+    title: 'S18 길랭 이벤트',
+    period: '7월 13일 ~ 8월 2일',
     start: { month: 7, day: 13 },
-    end: { month: 8, day: 3 },
+    end: { month: 8, day: 2 },
     weeklyCap: 7,
     winPts: 2,
     lossPts: 1,
     weeks: [
       { label: '1주차', range: '7/13–7/19', start: { month: 7, day: 13 }, end: { month: 7, day: 19 } },
       { label: '2주차', range: '7/20–7/26', start: { month: 7, day: 20 }, end: { month: 7, day: 26 } },
-      { label: '3주차', range: '7/27–8/3', start: { month: 7, day: 27 }, end: { month: 8, day: 3 } },
+      { label: '3주차', range: '7/27–8/2', start: { month: 7, day: 27 }, end: { month: 8, day: 2 } },
     ],
     prizes: [
       { rank: 1, medal: '🥇', label: '치킨 기프티콘' },
