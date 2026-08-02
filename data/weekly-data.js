@@ -9528,7 +9528,7 @@ window.WEEKLY_DATA = {
           "리즈",
           "W",
           "W",
-          "W",
+          "L",
           "L",
           "WL",
           "W",
@@ -9797,7 +9797,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "84 (54%)",
+      "total": "84 (52%)",
       "after": [
         "82 (46%)",
         ""
