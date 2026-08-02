@@ -9180,7 +9180,7 @@ window.WEEKLY_DATA = {
         "status": "green",
         "before": [
           "리즈",
-          "L",
+          "W",
           "W",
           "W",
           "W",
@@ -9485,7 +9485,7 @@ window.WEEKLY_DATA = {
     ],
     "summary": {
       "label": "합산 (승률)",
-      "total": "84 (52%)",
+      "total": "84 (54%)",
       "after": [
         "82 (46%)",
         ""
@@ -9855,7 +9855,7 @@ window.WEEKLY_DATA = {
         "status": "green",
         "before": [
           "재범",
-          "W",
+          "L",
           "L",
           "W",
           "L",
@@ -10076,7 +10076,7 @@ window.WEEKLY_DATA = {
         "status": "gray",
         "before": [
           "캬옹",
-          "L",
+          "W",
           "WW",
           "WW",
           "WL",
